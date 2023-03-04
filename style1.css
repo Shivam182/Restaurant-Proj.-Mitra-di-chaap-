@@ -97,6 +97,8 @@ p {
 }
 
 .top-title h3{
+    padding-top: 0.9rem;
+    padding-bottom: 0.8rem;
     text-transform: capitalize;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -167,7 +169,7 @@ p {
 
 
 .navbar-links{
-    font-size: 0.8rem;
+    font-size: 1.8rem;
     margin-left: 1rem;
     font-family: 'Kaushan Script',cursive;
     display:flex;
@@ -175,9 +177,9 @@ p {
 }
 
 .navbar-link{
-    padding: 0.5rem;
+    padding: 1.5rem;
     text-transform: capitalize;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.2rem;
     font-weight: 700;
 }  
 
@@ -549,6 +551,10 @@ p {
         width: 50px;
     }
 
+    .nav-btns{
+        display: none;
+    }
+
    
 
 }
@@ -557,13 +563,31 @@ p {
 
     h3{
         font-size: 1rem;
+        
     }
 
+    
     .nav-btns{
         display: none;
     }
 
-    
+
+
+      .intro h1{
+        font-size: 2.6rem;
+        margin-bottom: 2rem;
+    }
+
+
+    .tagline{
+        font-size: 1.2rem;
+    }
+
+    .navbar-link{
+        font-size: 1.2rem;
+        padding: 0.7rem;
+    }
+
 
 .food-card{ 
     margin: auto;
@@ -599,6 +623,12 @@ p {
         line-height: 0.7rem;
     }
 
+    .nav-center{
+        height: 100%;
+    }
+
+
+
     .intro h1{
         font-size: 2.6rem;
         margin-bottom: 2rem;
@@ -609,9 +639,15 @@ p {
         font-size: 1.2rem;
     }
 
+    .navbar-links{
+        margin-right: 1.5rem;
+    }
+
     .navbar-link{
-        font-size: 0.9rem;
-        padding: 0.4rem;
+        font-size: 1rem;
+        padding: 0.5rem;
+        letter-spacing: normal;
+    
     }
 
     .featured{
