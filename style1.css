@@ -191,18 +191,17 @@ p {
     place-content: center;
     color: aliceblue;
     width: 100vw;
-
 }
 
 .intro h1{
+    font-size: 4.5rem;
     font-weight: 650;
-    /* font-size: 6vw; */
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 .intro h2{
+    font-size: 1.5rem;
     text-transform: capitalize;
-    /* font-size: 1.3rem; */
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -232,10 +231,10 @@ p {
 .featured {
     display: grid;
     place-content: center;
-    /* grid-template-columns: repeat(3, 1fr); */
-    /* justify-content: space-between; */
     gap: 30px;
     width: 100%;  
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 3rem;
 }
 
 
@@ -320,7 +319,6 @@ p {
 }
 
 .online-order h3{
-    /* letter-spacing: 0.08rem; */
     font-size: 1rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

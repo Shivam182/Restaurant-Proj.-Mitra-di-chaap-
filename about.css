@@ -1,10 +1,7 @@
-
-
 .main{
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
-    /* border: 2px solid; */
 }
 
 .about-header{
@@ -13,11 +10,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
 }
 
 
 .title{
-    padding: 1rem;
+    padding: 1.6rem;
     margin-top: auto;
     margin-bottom: auto;
     font-family: 'Kaushan script', cursive;
