@@ -54,53 +54,19 @@ p {
 }
 
 
-
-@media screen and (min-width: 800px) {
-    h1{
-        font-size: 4rem;
-    }
-
-    h2{
-        font-size: 2.5rem;
-    }
-
-    h3{
-        font-size: 1.75rem;
-    }
-
-    h4{
-        font-size: 1rem;
-    }
-
-    h1,h2,h3,h4{
-        line-height: 1;
-    }
-}
-
-@media screen and (max-width: 420px) {
-
-    h3{
-        font-size: 0.8rem;
-        letter-spacing: 0.01rem;
-    }
-
-    .navbar-links{
-        visibility: hidden;
-    }
-    
-}
-
 .img {
     width: 100%;
     height: auto;
 }
+
+
 
 .text-slanted {
     font-family: 'Kaushan Script' , cursive ;
 }
 
 .navbar{
-    height: 6rem;
+    height: 15vh;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -109,7 +75,7 @@ p {
 
 .head{
     width: 100%;
-    height: 2.5rem;
+    height: 40%;
     background: rgb(165, 23, 23);
     display: flex;
 }
@@ -117,7 +83,9 @@ p {
 .head-center span{
     display: block;
     padding-top: 0.5rem;
+    padding-left: 0.5rem;
 }
+
 
 .head-center{
     width: 100%;
@@ -156,6 +124,7 @@ p {
     background-color: rgb(254, 244, 231);
 }
 
+
 .logo-container{
     padding: 0.5rem;
     display: flex;
@@ -171,19 +140,7 @@ p {
     font-size: 1rem;
 }
 
-.navbar-links{
-    font-size: 1.5rem;
-    font-family: 'Kaushan Script',cursive;
-    display:flex;
-    justify-content: space-between;
-}
 
-.navbar-link{
-    padding: 1rem;
-    text-transform: capitalize;
-    letter-spacing: 0.1rem;
-    font-weight: 650;
-}  
 .nav-center img{
     width: 50px;
     height: 50px;
@@ -192,7 +149,7 @@ p {
 .nav-btns{
     display: flex;
     justify-content: space-between;
-
+    margin-right: 0.5rem;
 }
 
 .nav-btns button{
@@ -208,8 +165,25 @@ p {
     font-family:'Times New Roman', Times, serif;
 }
 
+
+.navbar-links{
+    font-size: 0.8rem;
+    margin-left: 1rem;
+    font-family: 'Kaushan Script',cursive;
+    display:flex;
+    justify-content: space-between;
+}
+
+.navbar-link{
+    padding: 0.5rem;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}  
+
+
 .intro {
-    height: 80vh;
+    height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(./images/thali.jpg);
     display: grid;
     place-content: center;
@@ -220,13 +194,13 @@ p {
 
 .intro h1{
     font-weight: 650;
-    font-size: 6vw;
+    /* font-size: 6vw; */
     margin-bottom: 1rem;
 }
 
 .intro h2{
     text-transform: capitalize;
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -252,20 +226,17 @@ p {
     color: orange;
 }
 
-main {
-    height: 100rem;
-    display: grid;
-    place-items: center;
-}
 
 .featured {
     display: grid;
     place-content: center;
-    padding: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* justify-content: space-between; */
+    gap: 30px;
     width: 100%;  
 }
+
+
 
 .food-card{ 
     margin: auto;
@@ -372,32 +343,6 @@ main {
 }
 
 
-.about{
-    display: flex;
-    flex-direction: column;
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(./images/chicken.jpg);
-    width: 100%;
-    color: white;
-    padding: 3rem;
-    
-}
-
-.about h1{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.footer{
-width: 100%;
-padding: 2rem;
-background-color: rgb(161, 126, 9);
-
-}
-
-.footer-center{
-    display: grid;
-    place-items: center;
-}
-
 .reservation{
     display: flex;
     flex-direction: column;
@@ -408,14 +353,13 @@ background-color: rgb(161, 126, 9);
 }
 
 .reservation h1{
-    font-size: 2rem;
-    letter-spacing: 0.02rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.01rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
 
 .reservation-form{
-    /* border: 2px solid; */
     border-radius: 0.6rem;
     margin-bottom: 2rem;
     background-color: rgb(236, 178, 102);
@@ -464,3 +408,95 @@ background-color: rgb(161, 126, 9);
     
     
 }
+
+
+
+@media screen and (max-width: 420px) {
+
+    h1{
+        font-size: 0.8rem;
+    }
+
+    h2{
+        font-size: 0.6rem;
+        letter-spacing: 0.01rem;
+    }
+
+    h3{
+        font-size: 0.65rem;
+        line-height: 0.7rem;
+    }
+
+    .navbar-links{
+        /* visibility: hidden; */
+    }
+
+    .featured{
+        padding: 1rem;
+    }
+
+    .intro-title{
+        font-size: 2rem;
+        color: rgb(255, 255, 255);
+    }
+
+    .logo-container .name{
+        font-size: 0.9rem;
+        line-height: 1rem;
+    }
+
+    .logo-container img{
+        height: auto;
+        width: 50px;
+    }
+
+    .nav-btns{
+        /* visibility: hidden; */
+        display: none;
+    }
+
+   
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(./images/chicken.jpg);
+    width: 100%;
+    color: white;
+    padding: 3rem;
+    
+}
+
+.about h1{
+    line-height: 2.5rem;
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.about h3{
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+.about p{
+    font-size: 1rem;
+    color: aliceblue;
+}
+
+.footer{
+    margin-top: 1rem;
+width: 100%;
+padding: 2rem;
+background-color: rgb(161, 126, 9);
+
+}
+
+.footer-center{
+    display: grid;
+    place-items: center;
+}
+
+
+
+
