@@ -1,0 +1,66 @@
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  background-color: antiquewhite;
+  margin-top: 4rem;
+}
+
+.title-cart {
+  display: flex;
+  color: rgb(84, 76, 76);
+}
+
+.cart-header span {
+  font-size: 2.5rem;
+  background-color: brown;
+  padding: 0.4rem;
+  margin-right: 0.3rem;
+  border-radius: 0.6rem;
+  color: aliceblue;
+}
+
+.cart-header h1 {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.2rem;
+  font-size: 2rem;
+  font-family: "kaushan script", cursive;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+
+.cart-items{
+    margin-top: 1rem;
+}
+
+.card{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    background-color: aqua;
+    height: 4.4rem;
+}
+
+.billing-checkout{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.billing-box input{
+    width: 8rem;
+}
+
+.billing-box{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: blueviolet;
+    margin-top: 0.3rem;
+}
