@@ -16,6 +16,12 @@ body{
     font-size: 0.875rem;
 }
 
+
+/*hide scrollbar but keep the functionality.*/
+body::-webkit-scrollbar {
+    display: none;
+  }
+
 ul {
     list-style-type: none;
 }
@@ -103,6 +109,11 @@ p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.top-title:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .btns-header {
     display: flex;
     margin-left: 3.5rem;
@@ -114,6 +125,57 @@ p {
     display: inline-block;
     color: rgb(228, 234, 239);
     font-size: 1rem;
+}
+
+.btns-header span:hover{
+    cursor: pointer;
+}
+
+.notif-box{
+    /* display: block; */
+    height: 5rem;
+    width: 8rem;
+    background-color: #545a6f;
+    padding: 0.5rem;
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    z-index: 100;
+    border-radius: 0.3rem;
+}
+
+.show{
+    display: block;
+}
+
+.expand-box{
+    /* display: block; */
+    height: 5rem;
+    width: 8rem;
+    background: #545a6f;
+    padding: 0.5rem;
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    border-radius: 0.3rem;
+}
+
+.notif-box h4 a,.expand-box h4 a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: aliceblue;
+}
+
+.rotate{
+    /* border: 2px solid; */
+    transform: rotate(180deg);
+    transition: all 0.25s linear;
+}
+
+
+.show{
+    display: block;
 }
 
 

@@ -1,1 +1,1 @@
-import './js/common/topheader';
+import './js/common/topheader.js';
