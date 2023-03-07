@@ -1,3 +1,3 @@
-import '../common/navbar'
-import '../common/topheader'
+import '../common/navbar.js'
+import '../common/topheader.js'
 

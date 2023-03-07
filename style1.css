@@ -174,10 +174,6 @@ p {
 }
 
 
-.show{
-    display: block;
-}
-
 
 
 .nav-center {
@@ -228,6 +224,38 @@ p {
     margin-left: 0.5rem;
     font-family:'Times New Roman', Times, serif;
 }
+
+.search-box{
+    display: none;
+    position: absolute;
+    top: 7.5rem;
+    padding:0.6rem;
+    border: transparent;
+    z-index: 100;
+    right: 1rem;
+}
+
+.search-box input{
+    height: 1.76rem;
+    border-radius: 0.3rem;
+    border: transparent;
+    padding-left: 0.5rem;
+    
+}
+
+
+.nav-btns .search-query{
+    background-color: #331979;
+    font-family: serif;
+    padding: 0.3rem;
+    font-weight: normal;
+    letter-spacing: 0.02rem;   
+}
+
+.show{
+    display: block;
+}
+
 
 
 .navbar-links{
