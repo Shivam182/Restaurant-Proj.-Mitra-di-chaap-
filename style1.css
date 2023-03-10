@@ -497,6 +497,12 @@ p {
     font-size: 0.9rem;    
 }
 
+.footer-center{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
 
 /* Works for all the devices that has width under 900px*/
 
