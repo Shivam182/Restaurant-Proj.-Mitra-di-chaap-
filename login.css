@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
 body{
     height: 100vh;
     width: 100vw;
-    /* background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(./images/loginback.jpg); */
     
     
 }
@@ -17,7 +19,7 @@ main{
     justify-content: center;
     height: 100%;
     width: 100%;
-    background-color: rgb(248, 251, 243);
+    background-color: rgb(255, 255, 255);
     
 }
 
@@ -26,20 +28,20 @@ main{
     border-radius: 1rem;
     box-shadow: 3px 3px rgb(255, 255, 255), -1em 0 .4em rgb(193, 171, 171);
     padding: 1.6rem;
-    height: 75%;
-    width: 70%;
-    background-color: #eaf0d7;
+    height: 85%;
+    width: 50%;
+    background-color: #b3caba;
 }
 
 .title{
     display: flex;
     justify-content: space-evenly;
     text-transform: capitalize;
-    font-family: 'Kaushan Script',cursive;
-    background-color: rgb(255, 255, 255);
-    height: 24%;
+    font-family:'kaushan script' ,cursive;
+    letter-spacing: 0.1rem;
     width: 100%;
     align-items: center;
+    font-size: 0.7rem;
     
 }
 
@@ -63,9 +65,28 @@ main{
 }
 
 .form-box{
-    height: 76%;
     display: flex;
-    background-color: antiquewhite;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 652;
+    margin-top: 1.5rem;
+   
+}
+
+.form-box label {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.form-box input{
+    border: transparent;
+    background-color: rgb(229, 234, 240);
+    border-radius: 0.6rem;
+    padding: 0.6rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .login-box{
@@ -74,13 +95,82 @@ main{
 
 .signup-box{
     display: none;
-
 }
 
 .show{
     display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+
+
+
 
 .login-form{
     background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
 }
+
+.submit-btn{
+    margin-left: 5rem;
+    margin-top: 0.5rem;
+    padding: 0.6rem;
+    border: transparent;
+    border-radius: 0.6rem;
+    background-color: antiquewhite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.submit-btn:hover{
+    background-color: brown;
+    color: #fff;
+    cursor: pointer;
+}
+
+.forgot-pass{
+    margin-left: 2.5rem;
+}
+
+.forgot-pass:hover{
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.signup-form{
+    background-color: #fff;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    column-gap: 25px;
+    border-radius: 1rem;
+}
+
+.signup-btn{
+    margin-top: 0.5rem;
+    padding: 0.6rem;
+    border: transparent;
+    border-radius: 0.6rem;
+    background-color: antiquewhite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.signup-btn:hover{
+    background-color: brown;
+    color: #fff;
+    cursor: pointer;
+}
+
+#pic::file-selector-button{
+    border: transparent;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: grey;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    color: #fff;
+}
+
