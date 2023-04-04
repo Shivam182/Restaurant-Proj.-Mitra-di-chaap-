@@ -7,7 +7,8 @@ const down_arrow_icon = getElement('.arrow-down-icon');
 const notif_box = getElement('.notif-box');
 const expand_box = getElement('.expand-box');
 const fa_arrow = getElement('.fa-chevron-down');
-
+const login_btn = getElement('#login-btn');
+const signup_btn = getElement('#sign-btn');
 
 
 top_title.addEventListener('click', function(){
@@ -40,6 +41,15 @@ down_arrow_icon.addEventListener('click', function(){
     expand_box.classList.toggle('show');
 });
 
+
+
+login_btn.addEventListener('click',function(){
+    location.assign('login.html');
+});
+
+signup_btn.addEventListener('click',function(){
+    location.assign('login.html');
+});
 
 
 

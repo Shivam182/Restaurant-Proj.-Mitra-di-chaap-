@@ -1,0 +1,154 @@
+
+
+.navbar-links{
+  margin-left: 10rem;
+}
+
+
+.nav-btns{
+  visibility: hidden;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  background-color: antiquewhite;
+  margin-top: 4rem;
+}
+
+.title-cart {
+  display: flex;
+  color: rgb(84, 76, 76);
+}
+
+.cart-header span {
+  font-size: 2.5rem;
+  background-color: brown;
+  padding: 0.4rem;
+  margin-right: 0.3rem;
+  border-radius: 0.6rem;
+  color: aliceblue;
+}
+
+.cart-header h1 {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.2rem;
+  font-size: 2rem;
+  font-family: "kaushan script", cursive;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+
+.cart-items{
+    margin-top: 1rem;
+}
+
+.card{
+    margin-top: 0.5rem;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 4.4rem;
+    margin-top: 1.5rem;
+}
+
+.card-container{
+  padding: 0.5rem;
+  width: 70%;
+  /* border: 2px solid; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+    background-color: rgb(242, 250, 239);
+  
+}
+
+.item-image{
+  width: 4rem;
+  height: 4rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2rem;
+}
+
+.item-name{
+  margin-left: -10rem;
+}
+
+.card-btns{
+  font-size: 1.2rem;
+  
+}
+
+.card-btns button{
+  padding: 0.3rem;
+  font-size: 1.4rem;
+  border: transparent;
+  background: transparent;
+  color: grey;
+  font-weight: 600;
+}
+
+.trash-btn{
+  background: transparent;
+  border: transparent;
+  color: red;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.billing-checkout{
+  font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1rem;
+    margin-top: 2rem;
+}
+
+.billing-box input{
+    width: 8rem;
+    height: 2rem;
+}
+
+.billing-box button{
+  border: transparent;
+  color: aliceblue;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  letter-spacing: normal;
+  background-color: rgb(57, 43, 74);
+  padding: 0.3rem;
+
+}
+
+.billing-box{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: rgb(215, 206, 224);
+    margin-top: 0.3rem;
+    font-size: 1.5rem;
+    letter-spacing: normal;
+    font-weight: 600;
+}
+
+.cart-total{
+  letter-spacing: normal;
+  margin-top: 2.5rem;
+}
+
+.code{
+  margin-top: 0.3rem;
+}
+
+.checkout-btn:hover{
+  cursor: pointer;
+}

@@ -7,12 +7,14 @@ const signup_box = getElement('.signup-box');
 
 
 login.addEventListener('click', function(){
-    login.style.backgroundColor = 'burlywood';
+    login.style.backgroundColor = '#7B6C69';
+    login.style.color = 'white'
 
     if (!login_box.classList.contains('show')) {
           login_box.classList.add('show');
           signup_box.classList.remove('show');
           signup.style.backgroundColor = 'white'
+          signup.style.color = 'black'
     }
 
     return;
@@ -21,12 +23,13 @@ login.addEventListener('click', function(){
 
 signup.addEventListener('click', function(){
 
-    signup.style.backgroundColor = 'burlywood';
-
+    signup.style.backgroundColor = '#7B6C69';
+    signup.style.color= 'white';
     if (!signup_box.classList.contains('show')) {
         login_box.classList.remove('show');
         signup_box.classList.add('show');
         login.style.backgroundColor = 'white';
+        login.style.color = 'black';
     }
 
     return;

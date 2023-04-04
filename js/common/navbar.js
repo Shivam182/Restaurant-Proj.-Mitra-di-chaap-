@@ -7,6 +7,9 @@ const dine_in_btn = getElement(".reservation-btn");
 const search_box = getElement(".search-box");
 const search_query = getElement(".search-query");
 
+const close_search_btn = getElement('.fa-close');
+const result_area = getElement('.result-area');
+
 logo_container.addEventListener("mouseover", function () {
   // change the cursor to pointer on hover
   logo_container.style.cursor = "pointer";
@@ -18,11 +21,15 @@ logo_container.addEventListener("click", function () {
 
 search_btn.addEventListener("click", function () {
   search_box.classList.toggle("show");
-  // console.log(search_box.classList.contains('show'))
+  
 });
 
+
+try {
+  
 search_query.addEventListener("click", function () {
   // search action........
+  result_area.classList.add('show');
 });
 
 order_online_btn.addEventListener("click", function () {
@@ -36,3 +43,12 @@ dine_in_btn.addEventListener("click", function () {
   }
   window.scrollTo(0, 1000);
 });
+close_search_btn.addEventListener('click',function(){
+    search_box.classList.remove('show');
+    result_area.classList.remove('show');
+});
+
+} catch (error) {
+  
+}
+

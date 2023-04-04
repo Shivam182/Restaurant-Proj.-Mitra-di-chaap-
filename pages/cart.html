@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="../styles/style1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="../styles/cart.css" />
+    <script type="module" src="../js/pages/cart.js" defer></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="nav-center">
+        <div class="logo-container">
+          <img src="../images/hot.png" alt="logo" />
+          <h4 class="name text-slanted">
+            Mitra <br />
+            Di <br />
+            Chaap
+          </h4>
+        </div>
+
+        <div class="navbar-links">
+          <a href="index.html" class="navbar-link">Home</a>
+          <a href="menu.html" class="navbar-link">menu</a>
+          <a href="about.html" class="navbar-link">about</a>
+          <a href="contact.html" class="navbar-link">contact</a>
+        </div>
+
+        <!-- navbar buttons -->
+        <div class="nav-btns">
+          <button class="search-btn">
+            <i class="fa fa-search"></i>
+          </button>
+          <button class="order-online-btn">order online</button>
+          <button class="reservation-btn">dine-in</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main components -->
+    <main class="main">
+      <div class="cart-header">
+        <span>
+          <i class="fa fa-shopping-cart"></i>
+        </span>
+        <h1 class="title-cart">my Cart</h1>
+      </div>
+
+      <div class="cart-items">
+        <div class="container">
+          <!--single item here -->
+          <div class="card">
+            <div class="card-container">
+              <img src="" alt="item image" class="item-image" />
+              <h3 class="item-name">item name</h3>
+              <div class="card-btns">
+                <button class="incease">
+                  <i class="fa fa-plus-square"></i>
+                </button><span>0</span
+                ><button class="decrease">
+                  <i class="fa fa-minus-square"></i>
+                </button>
+              </div>
+              <span>$12</span>
+              <button class="trash-btn">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          </div>
+         
+
+           <!--single item here -->
+           <div class="card">
+            <div class="card-container">
+              <img src="" alt="item image" class="item-image" />
+              <h3 class="item-name">item name</h3>
+              <div class="card-btns">
+                <button class="incease">
+                  <i class="fa fa-plus-square"></i>
+                </button><span>0</span
+                ><button class="decrease">
+                  <i class="fa fa-minus-square"></i>
+                </button>
+              </div>
+              <span>$12</span>
+              <button class="trash-btn">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          </div> <!--single item here -->
+          <div class="card">
+            <div class="card-container">
+              <img src="" alt="item image" class="item-image" />
+              <h3 class="item-name">item name</h3>
+              <div class="card-btns">
+                <button class="incease">
+                  <i class="fa fa-plus-square"></i>
+                </button><span>0</span
+                ><button class="decrease">
+                  <i class="fa fa-minus-square"></i>
+                </button>
+              </div>
+              <span>$12</span>
+              <button class="trash-btn">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          </div> <!--single item here -->
+          <div class="card">
+            <div class="card-container">
+              <img src="" alt="item image" class="item-image" />
+              <h3 class="item-name">item name</h3>
+              <div class="card-btns">
+                <button class="incease">
+                  <i class="fa fa-plus-square"></i>
+                </button><span>0</span
+                ><button class="decrease">
+                  <i class="fa fa-minus-square"></i>
+                </button>
+              </div>
+              <span>$12</span>
+              <button class="trash-btn">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Billing System -->
+
+      <div class="billing-checkout">
+        <div class="billing-box">
+          <label for="code">Apply coupon code:</label>
+          <div class="code">
+            <input type="text" name="code" />
+            <button type="submit">apply</button>
+          </div>
+
+          <h3 class="cart-total">Sub Total: $334/-</h3>
+          <button class="checkout-btn">checkout</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-center">
+        <div class="contact-us">
+          <h3>
+            <a href="tel:+9874563210" class="phone">Call us: +9874563210</a>
+          </h3>
+          <h3>
+            <a href="mailto:chaap_do_mitra123@gmail.com" class="mail"
+              >Email us: chaap_do_mitra123@gmail.com</a
+            >
+          </h3>
+        </div>
+        <div class="reach-us">
+          <p class="address">
+            Mitra Di Chaap, Kankhal, Haridwar, Uttrakhand <br />
+            Pincode: 226002
+          </p>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>All rights reserved &copy Mitra di chaap 2023</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <script type="module" src="../js/pages/login.js" defer></script>
+    <title>Login | Signup</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+
+
+        <div class="title">
+          <div class="title-container">
+                <div class="login">
+            <h1>login</h1>
+          </div>
+
+          <div class="signup">
+            <h1>signup</h1>
+          </div>
+          </div>
+      
+        </div>
+
+        <div class="form-box">
+          <div class="login-box show">
+            <form action="" class="login-form">
+              <table>
+                <tr>
+                  <td>
+                    <label for="username">Username / Email:</label>
+                    <input type="text" id="username" placeholder="Enter here" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="password">Password:</label>
+                    <input
+                      type="password"
+                      placeholder="Enter here"
+                      id="password"
+                    />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <button type="submit" class="submit-btn">Login</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <h5 class="forgot-pass">Forgot password ?</h5>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+
+          <div class="signup-box">
+            <form action="" class="signup-form">
+              <table>
+                <tr>
+                  <td>
+                    <label for="username1">Name:</label>
+                    <input type="text" id="username1" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="mail1">Email:</label>
+                    <input type="email" id="mail1" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="pass1">Password:</label>
+                    <input type="password" id="pass1" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="pass-cnf">Confirm Password:</label>
+                    <input type="password" id="pass-cnf" />
+                  </td>
+                </tr>
+              </table>
+
+              <table>
+                <tr>
+                  <td>
+                    <label for="pincode">Pincode:</label>
+                    <input type="text" id="pincode" inputmode="numeric" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="pic">Photo Upload:</label>
+                    <input type="file" id="pic" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" />
+                  </td>
+                </tr>
+              </table>
+            </form>
+            <button type="submit" class="signup-btn">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
