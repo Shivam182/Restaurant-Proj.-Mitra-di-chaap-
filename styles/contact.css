@@ -9,12 +9,13 @@
 
 
 .navbar-links{
-    margin-left: 10rem;
+    /* margin-left: 10rem; */
   }
   
   
   .nav-btns{
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden; */
   }
   
 

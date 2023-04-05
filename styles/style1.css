@@ -427,14 +427,15 @@ p {
 
 .order{
     margin-top: 3rem;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+
+    /* flex-direction: row; */
     /* border: 2px solid; */
     width: 100%;
 }
 
 .online-order{
-    width: 50%;
+    /* width: 50%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -488,7 +489,7 @@ p {
 .reservation{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    /* width: 50%; */
     align-items: center;
     justify-content: center;
 
@@ -564,9 +565,30 @@ p {
 }
 
 
+.login-signup{
+    margin-right: 1rem;
+    
+}
+
+.login-signup button{
+    display: inline-block;
+    padding: 0.2rem;
+    text-transform: capitalize;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    border: transparent;
+    border-radius: 0.18rem;
+}
+
+.login-signup button:hover{
+    color: white;
+    background-color: #331979;
+}
+
+
 /* Works for all the devices that has width under 900px*/
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 957px) {
 
     .head-center{
         display: flex;
@@ -624,6 +646,55 @@ p {
         width: 50px;
     }
 
+
+
+    
+ .head-center{
+    /* border: 2px solid; */
+    width: 100%;
+}
+
+.top-container-first{
+    /* border: 2px solid; */
+    /* background-color: #331979; */
+    
+}
+
+.top-title{
+    
+    /* border: 2px solid; */
+}
+
+.btns-header span{
+    padding: 0.4rem;
+    font-size: 1rem;
+
+}
+
+.login-signup{
+    margin-right: 1rem;
+    /* padding-top: 0.5rem;
+    padding-bottom: 0.5rem; */
+    /* border: 2px solid; */
+    width: 9.5rem;
+}
+
+.login-signup button{
+    /* margin-top: 0; */
+    font-size: 1rem;
+    padding: 0.06rem;
+
+}
+
+#up-header-line{
+    font-size: 1.1rem;
+}
+
+.login-signup{
+/* border: 2px solid; */
+/* margin-right: 0; */
+}
+
    
 
 
@@ -648,7 +719,12 @@ p {
         line-height: 0.7rem;
     }
 
-    .head-center{
+    #up-header-line{
+        font-size: 0.7rem;
+        
+    }
+
+    /* .head-center{
         display: flex;
         justify-content: space-between;
     }
@@ -664,54 +740,68 @@ p {
     
     .btns-header span{
         padding: 0.6rem;
-    }
+    } */
 
-    .navbar{
+    /* .navbar{
         height: 10vh;
-    }
+    } */
 
     .intro h1{
         font-size: 5rem;
         margin-bottom: 2.9rem;
     }
 
-    .tagline{
+    /* .tagline{
         font-size: 1.5rem;
-    }
+    } */
 
     .navbar-link{
         font-size: 1.4rem;
         padding: 1rem;
     }
 
-    .featured{
+    /* .featured{
         padding: 1rem;
         grid-template-columns: 1fr 1fr;
         margin-top: 2rem;
-    }
-
+    } */
+/* 
     .intro-title{
         font-size: 2rem;
         color: rgb(255, 255, 255);
-    }
+    } */
 
-    .logo-container .name{
+    /* .logo-container .name{
         font-size: 0.9rem;
         line-height: 1rem;
-    }
+    } */
 
-    .logo-container img{
+    /* .logo-container img{
         height: auto;
         width: 50px;
-    }
+    } */
 
     .nav-btns{
         display: none;
     }
 
+    #up-header-line{
+        font-size: 1.2rem;
+    }
+
+   
+ 
    
 
 }
+
+@media screen and (max-width: 745px) {
+    #up-header-line{
+        font-size: 1rem;
+        /* border: 2px solid; */
+    }
+}
+
 
 @media screen  and (max-width: 580px){
 
@@ -756,6 +846,48 @@ p {
 
 
 
+.head-center{
+    /* border: 2px solid; */
+    width: 100%;
+}
+
+.top-container-first{
+    /* border: 2px solid; */
+    /* background-color: #331979; */
+    
+}
+
+.top-title{
+    
+    /* border: 2px solid; */
+}
+
+.btns-header span{
+    padding: 0.4rem;
+    font-size: 0.7rem;
+
+}
+
+.login-signup{
+    margin-right: 0rem;
+    /* padding-top: 0.5rem;
+    padding-bottom: 0.5rem; */
+    /* border: 2px solid; */
+    width: 6.5rem;
+}
+
+.login-signup button{
+    /* margin-top: 0; */
+    font-size: 0.9rem;
+    padding: 0.06rem;
+
+}
+
+#up-header-line{
+    font-size: 0.8rem;
+}
+
+
 }
 
 
@@ -781,6 +913,20 @@ p {
         height: 100%;
     }
 
+    .login-signup{
+        margin-right: 0rem;
+        /* padding-top: 0.5rem;
+        padding-bottom: 0.5rem; */
+        /* border: 2px solid; */
+        width: 6.5rem;
+    }
+
+    .login-signup button{
+        /* margin-top: 0; */
+        font-size: 0.6rem;
+        padding: 0.06rem;
+
+    }
 
 
     .intro h1{
@@ -829,6 +975,11 @@ p {
         display: none;
     }
 
+    #up-header-line{
+        font-size: 0.6rem;
+    }
+
+  
    
 }
 
@@ -871,6 +1022,7 @@ background-color: rgb(51, 55, 87);
     display: grid;
     place-items: center;
     margin-top: 1.5rem;
+    padding: 0.5rem;
 }
 
 .reach-us p, .footer-center h3{
@@ -892,25 +1044,6 @@ background-color: rgb(51, 55, 87);
     color: white;
 }
 
-.login-signup{
-    margin-right: 1rem;
-    
-}
-
-.login-signup button{
-    display: inline-block;
-    padding: 0.2rem;
-    text-transform: capitalize;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    border: transparent;
-    border-radius: 0.18rem;
-}
-
-.login-signup button:hover{
-    color: white;
-    background-color: #331979;
-}
 
 .scrollable{
     overflow-x: hidden;
