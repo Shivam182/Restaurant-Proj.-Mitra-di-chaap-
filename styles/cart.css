@@ -1,11 +1,12 @@
 
 
 .navbar-links{
-  margin-left: 10rem;
+  /* margin-left: 10rem; */
 }
 
 
 .nav-btns{
+  display: none;
   visibility: hidden;
 }
 
@@ -66,7 +67,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-    background-color: rgb(242, 250, 239);
+  background-color: rgb(242, 250, 239);
   
 }
 
@@ -78,7 +79,7 @@
 }
 
 .item-name{
-  margin-left: -10rem;
+  /* margin-left: -10rem; */
 }
 
 .card-btns{
@@ -151,4 +152,49 @@
 
 .checkout-btn:hover{
   cursor: pointer;
+}
+
+
+@media screen and (max-width: 700px) {
+ 
+.item-image{
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1rem;
+}
+
+.item-name{
+  font-size: 0.9rem;
+  /* margin-left: -10rem; */
+}
+
+.card{
+  /* border: 2px solid; */
+  /* margin-bottom: 0; */
+  margin-top: 0;
+}
+
+.card-btns{
+  font-size: 1.2rem;
+  
+}
+
+.card-btns button{
+  padding: 0.3rem;
+  font-size: 1rem;
+  border: transparent;
+  background: transparent;
+  color: grey;
+  font-weight: 600;
+}
+
+.trash-btn{
+  background: transparent;
+  border: transparent;
+  color: red;
+  font-size: 1.6rem;
+  margin-right: 0.5rem;
+}
+
 }
