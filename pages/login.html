@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/login.css" />
     <script type="module" src="../js/pages/login.js" defer></script>
+    <script type="module" src="../functionality/login.js" defer></script>
     <title>Login | Signup</title>
   </head>
   <body>
     <main>
+      
       <div class="container">
 
 
@@ -28,12 +30,13 @@
 
         <div class="form-box">
           <div class="login-box show">
-            <form action="" class="login-form">
+            <form action="" class="login-form" id="login-form" method="post">
               <table>
                 <tr>
                   <td>
                     <label for="username">Username / Email:</label>
                     <input type="text" id="username" placeholder="Enter here" />
+                    <small class="err-msg">*Bad credentials</small>
                   </td>
                 </tr>
 
@@ -50,7 +53,7 @@
 
                 <tr>
                   <td>
-                    <button type="submit" class="submit-btn">Login</button>
+                    <button type="submit" class="login-btn" id="login-btn">Login</button>
                   </td>
                 </tr>
 

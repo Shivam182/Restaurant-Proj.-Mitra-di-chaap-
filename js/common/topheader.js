@@ -9,6 +9,18 @@ const expand_box = getElement('.expand-box');
 const fa_arrow = getElement('.fa-chevron-down');
 const login_btn = getElement('#login-btn');
 const signup_btn = getElement('#sign-btn');
+const login_signup_box = getElement('.login-signup');
+
+
+const urlSearchParams = new URLSearchParams(window.location.search);
+
+
+
+const userToken = urlSearchParams.get('userToken');
+
+if (userToken) {
+    login_signup_box.style.display = 'none';
+}
 
 
 top_title.addEventListener('click', function(){
@@ -28,7 +40,8 @@ bell_icon.addEventListener('click',function(){
 });
 
 person_icon.addEventListener('click', function(){
-    location.assign('profile.html');
+    // location.assign('profile.html');
+    window.location.href = `profile.html?userToken=${userToken}`
 });
 
 
@@ -42,7 +55,6 @@ down_arrow_icon.addEventListener('click', function(){
 });
 
 
-
 login_btn.addEventListener('click',function(){
     location.assign('login.html');
 });
@@ -50,9 +62,5 @@ login_btn.addEventListener('click',function(){
 signup_btn.addEventListener('click',function(){
     location.assign('login.html');
 });
-
-
-
-
 
 

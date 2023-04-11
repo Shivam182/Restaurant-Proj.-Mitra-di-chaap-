@@ -2,9 +2,10 @@
 
 
 body{
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
      background-color: #e9ffee;
+    
     
 }
 
@@ -20,17 +21,18 @@ main{
     justify-content: center;
     height: 100%;
     width: 100%;
-    /* background-color: rgb(151, 19, 19); */
-
+    /* border: 2px solid; */
+    
 }
 
 
 .container{
     border-radius: 1rem;
     box-shadow: 3px 3px rgb(255, 255, 255), -1em 0 .4em rgb(193, 171, 171);
-    padding: 1.6rem;
-    height: 85%;
-    width: 50%;
+    padding: 2rem;
+    /* height: 85%; */
+    /* width: 50%; */
+
     background-color: rgb(72, 72, 118);
    
 }
@@ -41,34 +43,40 @@ main{
     text-transform: capitalize;
     font-family:'kaushan script' ,cursive;
     letter-spacing: 0.1rem;
-    width: 100%;
+    /* width: 100%; */
     align-items: center;
     font-size: 0.7rem;
     /* border: 2px solid; */
     /* border-radius: 50px; */
+    /* border: 2px solid; */
     
 }
 
 .title-container{
+
     display: flex;
     flex-direction: row;
     /* border: 2px solid; */
     padding: 0.4rem;
-    width: 75%;
+    /* width: 75%; */
 }
 
 .signup{
     background-color: #fff;
-    width: 50%;
+    /* width: 50%; */
     text-align: center;
     /* border-radius: 10%; */
+    padding-right: 0.6rem;
+    padding-left: 0.6rem;
 }
 .signup:hover{
     cursor: pointer;
 }
 
 .login{
-    width: 50%;
+    padding-right: 0.6rem;
+    padding-left: 0.6rem;
+    /* width: 50%; */
     text-align: center;
     background-color: grey;
     
@@ -129,7 +137,7 @@ main{
     border-radius: 1rem;
 }
 
-.submit-btn{
+.login-btn{
     margin-left: 5rem;
     margin-top: 0.5rem;
     padding: 0.6rem;
@@ -139,7 +147,7 @@ main{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.submit-btn:hover{
+.login-btn:hover{
     background-color: brown;
     color: #fff;
     cursor: pointer;
@@ -158,9 +166,9 @@ main{
 .signup-form{
     background-color: #fff;
     padding: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    column-gap: 25px;
+    display: grid;
+    /* flex-direction: row; */
+    /* column-gap: 25px; */
     border-radius: 1rem;
 }
 
@@ -188,3 +196,10 @@ main{
     color: #fff;
 }
 
+.err-msg{
+    display: none;
+    font-size: 0.65rem;
+    color: red;
+    font-weight: bold;
+    padding: 0.5rem;
+}
