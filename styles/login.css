@@ -5,7 +5,12 @@ body{
     /* height: 100vh;
     width: 100vw; */
      background-color: #e9ffee;
-    
+     /* background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../images/login-back.jpg); */
+/* Center and scale the image nicely */
+/* background-position: center;
+background-repeat: no-repeat;
+background-size:cover; */
+/* height: 100%; */
     
 }
 
@@ -33,7 +38,7 @@ main{
     /* height: 85%; */
     /* width: 50%; */
 
-    background-color: rgb(72, 72, 118);
+    background-color: rgb(46, 74, 86);
    
 }
 
@@ -170,7 +175,9 @@ main{
     /* flex-direction: row; */
     /* column-gap: 25px; */
     border-radius: 1rem;
+    /* text-align: center; */
 }
+
 
 .signup-btn{
     margin-top: 0.5rem;
@@ -187,14 +194,20 @@ main{
     cursor: pointer;
 }
 
+#pic{
+    width: 10rem;
+}
+
 #pic::file-selector-button{
     border: transparent;
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: grey;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     border-radius: 0.2rem;
     color: #fff;
+    /* width: 2rem; */
 }
+
 
 .err-msg{
     display: none;
@@ -202,4 +215,10 @@ main{
     color: red;
     font-weight: bold;
     padding: 0.5rem;
+}
+
+.form-err{
+    font-size: 0.55rem;
+    color: red;
+    font-weight: bold;
 }
