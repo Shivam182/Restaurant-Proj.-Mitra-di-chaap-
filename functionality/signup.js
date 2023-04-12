@@ -11,6 +11,7 @@ const phone = getElement('#phone');
 
 const signup = getElement('#signup-btn');
 var httpRequest;
+var loginRequest;
 const url = 'http://localhost:9090/api/v1/auth/register';
 const url2 = 'http://localhost:9090/api/v1/auth/createToken';
 
@@ -74,6 +75,47 @@ function clearErrors(){
 
 function makeRequest(url,data){
     httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = createToken;
     httpRequest.open('POST',url,true);
-    httpRequest.send(data);
+    httpRequest.setRequestHeader(
+        "Content-Type",
+        "application/json"
+    )
+    httpRequest.send(JSON.stringify(data));
+}
+
+function createToken(){
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+
+        if (httpRequest.status === 201) {
+            loginRequest = new XMLHttpRequest();
+            loginRequest.open('POST',url2,true);
+            const login_data = {'username':mail.value,'password':password.value};
+            loginRequest.onreadystatechange = loginHandler;
+            loginRequest.setRequestHeader(
+                "Content-Type","application/json"
+            )
+            loginRequest.send(JSON.stringify(login_data));
+            
+          
+        }else{
+            // console.log('user not created...'+ httpRequest.status);
+        }
+
+    }
+}
+
+function loginHandler(){
+
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        
+
+  if (loginRequest.status === 200) {
+    const res = JSON.parse(loginRequest.responseText);
+                window.location.href = `index.html?userToken=${res.token}`;
+                            console.log('token: '+res.token);
+            }
+
+    }
+
 }

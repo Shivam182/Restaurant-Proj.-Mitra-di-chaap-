@@ -60,7 +60,7 @@ function alertContents(){
 
 
             // USER NOT FOUND 
-            if (httpRequest.status === 404) {
+            if (httpRequest.status === 404 | 500) {
             // console.log('user not found !!!')
                 error_message.style.display = 'block';
                 user.value ='';
