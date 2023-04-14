@@ -11,7 +11,7 @@ makeRequest(url);
 function makeRequest(url){
     httpRequest =new XMLHttpRequest();
     httpRequest.open('GET',url,true);
-    httpRequest.setRequestHeader('Authorization','Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJleHAiOjE2ODE0NzM0MTgsImlhdCI6MTY4MTQ3MTYxOH0.5suTg9u16gOpAJT2WwP5ExU_m2uVpC1c6JYeykM5h1OXjfwVBpcc8M51c_JTkT1hJWw7NP4bf7YLzdvllLZsyQ');
+    httpRequest.setRequestHeader('Authorization','Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJleHAiOjE2ODE0ODcwNzgsImlhdCI6MTY4MTQ4NTI3OH0.HGOrlT-3XwbJSKVCbbCHivPedu3OF7-A8pDM-2ewGjQhkZ6t8tVmfdLwWlmM6dJCn0CmK_UomYUw82W4TUCLKw');
     httpRequest.onreadystatechange = setFoodItems;
     httpRequest.send();
 }
@@ -30,19 +30,23 @@ function setFoodItems(){
             // console.log(item);
 
             return ` <!-- single card -->
-            <div class="card">
-              <div class="card-body">
+            <div class="food-card">
+              <div class="card-content">
                 <h3 class="item-title">${item.title}</h3>
                 <img
                   src="${imgURL+item.itemId}"
                   alt="item image"
                   class="item-image"
                 />
-                <p class="mini-desc">
+                <p class="mini-description">
                   ${item.description}
                 </p>
-                <h3 class="price">${item.price}</h3>
-                <button class="addTocart">Add</button>
+                <div class="inner-container">
+                 
+                <button class="add-order">Add</button>
+                <h3 class="price">$${item.price}</h3>
+                </div>
+              
               </div>
             </div>
             <!-- end of single card -->`;
