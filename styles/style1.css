@@ -510,7 +510,7 @@ p {
     border-radius: 0.6rem;
     margin-bottom: 2rem;
     background-color: rgb(236, 178, 102);
-    width: 50%;
+    /* width: 50%; */
 }
 
 .reservation-form form{
@@ -988,6 +988,9 @@ p {
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/chicken.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     color: white;
     padding: 3rem;
@@ -1050,7 +1053,3 @@ background-color: rgb(51, 55, 87);
     overflow-y: auto;
     text-align:justify;
 }
-
-
-
-
