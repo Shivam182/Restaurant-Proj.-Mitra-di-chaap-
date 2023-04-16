@@ -71,6 +71,7 @@
 }
 
 .item-name{
+  letter-spacing: normal;
   /* margin-left: -10rem; */
 }
 
@@ -94,6 +95,11 @@
   color: red;
   font-size: 2rem;
   margin-right: 0.5rem;
+}
+
+
+.increase:hover, .decrease:hover , .trash-btn:hover{
+  cursor: pointer;
 }
 
 .billing-checkout{
