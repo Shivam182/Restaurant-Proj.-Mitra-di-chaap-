@@ -6,9 +6,6 @@
 
 
 
-.navbar-links{
-    /* margin-left: 10rem; */
-  }
   
   
   .nav-btns{
@@ -54,3 +51,23 @@
     letter-spacing: 0.04rem;
     border-radius: 1rem;
 }
+
+
+@media screen and (min-width: 800px) {
+  
+    .navbar-links{
+      margin-right: 10rem;
+    }
+    
+    
+    }
+    
+    
+    @media screen and (min-width: 1000px) {
+       
+    
+      .navbar-links{
+        margin-right: 20rem;
+      }
+    
+    }

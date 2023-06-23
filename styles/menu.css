@@ -87,6 +87,9 @@
     margin-top: 6rem;
 }
 
+.filter:hover{
+  cursor: pointer;
+}
 
 .filters {
   display: flex;
@@ -122,6 +125,10 @@
     font-weight: 600;
     text-align: center;
     margin-top: -25;
+}
+
+#price-slider:hover{
+  cursor: pointer;
 }
 
 .cards {

@@ -8,10 +8,6 @@
 
 
 
-.navbar-links{
-    /* margin-left: 10rem; */
-  }
-  
   
   .nav-btns{
     display: none;
@@ -84,3 +80,25 @@
     margin-top: 1.5rem;
 }
 
+
+
+
+
+@media screen and (min-width: 800px) {
+  
+    .navbar-links{
+      margin-right: 10rem;
+    }
+    
+    
+    }
+    
+    
+    @media screen and (min-width: 1000px) {
+       
+    
+      .navbar-links{
+        margin-right: 20rem;
+      }
+    
+    }
