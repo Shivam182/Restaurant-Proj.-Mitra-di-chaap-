@@ -1,0 +1,11 @@
+.ticket{
+    border: 2px solid;
+    padding: 1rem;
+    background-color:antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#warn{
+    color: rgb(34, 34, 163);
+    font-size: 0.9rem;
+}
