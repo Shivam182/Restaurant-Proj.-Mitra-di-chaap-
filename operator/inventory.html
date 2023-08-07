@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/inventory.css">
+
+    <script type="module" src="../js/operator/inventory.js"></script>
+    <title>Inventory</title>
+</head>
+<body>
+    <div class="main">
+        <div class="headin">Inventory</div>
+
+        <div class="search">
+            
+            <input type="text">
+            <button class="find">Search By Name</button>
+
+            <input type="text">
+            <button class="find">Search By Category</button>
+
+            <button id="add-item-btn">
+                <a href="addProduct.html">Add a Product</a>
+            </button>
+        </div>
+
+
+        <div class="inventory-table">
+            <table>
+                <tr>
+                    <th>Item Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Ratings</th>
+                    <th>View_Link</th>
+                    <th>Edit Product</th>
+                </tr>
+
+                <tr>
+                    <td>34233123</td>
+                    <td>Chhole</td>
+                    <td>$120</td>
+                    <td>15</td>
+                    <td>4.2</td>
+                    <td>View_Link</td>
+                    <td>Edit_Product</td>
+                </tr>
+
+                <tr>
+                    <td>32342312</td>
+                    <td>Bhature</td>
+                    <td>$30</td>
+                    <td>15</td>
+                    <td>3.2</td>
+                    <td>View_Link</td>
+                    <td>Edit_Product</td>
+                </tr>
+
+                <tr>
+                    <td>56533123</td>
+                    <td>Palak Panneer</td>
+                    <td>$150</td>
+                    <td>10</td>
+                    <td>4.0</td>
+                    <td>View_Link</td>
+                    <td>Edit_Product</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -52,3 +52,29 @@ header i{
     cursor: pointer;
     background-color: rgb(57, 57, 159);
 }
+
+
+/*This is for the operator dashboard*/
+.headin{
+  text-align: center;
+  font-size: 1.9rem;
+  text-decoration: underline;
+}
+
+.search{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  padding: 1rem;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,td {
+  text-align: left;
+  border: 1px solid black;
+  padding: 0.3rem;
+}

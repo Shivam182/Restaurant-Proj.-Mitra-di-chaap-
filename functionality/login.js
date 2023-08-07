@@ -34,13 +34,8 @@ form.addEventListener('submit',function(e){
         "username":`${user.value}`,
         "password":`${password.value}`
     }
-    // httpRequest.send(`username=${encodeURIComponent(user.value)}&password=${encodeURIComponent(password.value)}`);
 
     httpRequest.send(JSON.stringify(data));
-
-
-
-
    
 });
 

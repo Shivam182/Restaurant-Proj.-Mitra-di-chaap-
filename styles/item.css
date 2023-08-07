@@ -1,0 +1,83 @@
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.item-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-name{
+    font-size: 2.3rem;
+}
+
+.image-carousel{
+    background-color: blanchedalmond;
+    height: 15rem;
+    width: 25rem;
+    padding: 0.2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.image{
+   height: 100%;
+   width: 100%;
+   background-color: #a03d3d;
+}
+
+.description-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+    max-width: 25rem;
+    padding: 0.4rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    border-radius: 0.8rem;
+}
+
+.content{
+
+    text-align: center;
+
+}
+
+.price-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.4rem;
+    width: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    background-color: bisque;
+    margin-top: 1.5rem;
+}
+
+
+.reviews{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 25rem;
+    background-color: blueviolet;
+    margin-top: 1.6rem;
+}
+
+.review-box{
+    text-align: center;
+    background-color: aqua;
+    margin-bottom: 0.5rem;
+}
+

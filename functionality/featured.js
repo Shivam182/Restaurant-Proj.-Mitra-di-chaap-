@@ -5,7 +5,7 @@ const featured_section = getElement(".featured");
 
 var httpRequest;
 var featured_items = {
-  featured: ["9", "10", "11"],
+  featured: ["9", "3", "7"],
   items: [],
 };
 
@@ -33,7 +33,7 @@ function makeRequest(i, length) {
       httpRequest.status === 200
     ) {
       var data = JSON.parse(httpRequest.responseText);
-
+      console.log('hey shivam'+  JSON.stringify(data))
       featured_items.items.push(JSON.stringify(data));
       makeRequest(i + 1, featured_items.featured.length);
     }

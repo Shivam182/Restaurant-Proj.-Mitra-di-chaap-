@@ -14,10 +14,11 @@ order_now.addEventListener('click', function(){
 });
 
 order_btn.addEventListener('click', function(){
-    location.assign('menu.html');
+    location.assign('menu.html'); // must go to cart directly. with the element.
 });
 
 find_table_btn.addEventListener('click', function(){
     // open ticket modal
+    location.assign('ticket.html') // if all fields are filled only then . 
 });
 

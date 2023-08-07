@@ -1,0 +1,36 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.headin{
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.items{
+    width: 100%;
+    background-color: antiquewhite;
+    padding: 1.5rem;
+}
+
+.items-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(130px,1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    background-color: rgb(151, 103, 40);
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+
+.item-box{
+    background-color: aqua;
+    padding: 2rem;
+    border-radius: 0.6rem;
+}

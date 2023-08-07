@@ -161,7 +161,7 @@ h4{
 
 .expand-box {
   /* display: block; */
-  height: 10rem;
+  height: 5rem;
   width: 9rem;
   background: #545a6f;
   padding: 0.5rem;
@@ -171,12 +171,27 @@ h4{
   border-radius: 0.3rem;
 }
 
-.notif-box h4 a,
 .expand-box h4 a {
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
   color: aliceblue;
+  font-size: 0.9rem;
+}
+
+.expand-box h4 a:hover{
+  color: grey;
+}
+
+.notif-box {
+  height: 5rem;
+}
+
+.notif-box h3 {
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+
 }
 
 .rotate {
