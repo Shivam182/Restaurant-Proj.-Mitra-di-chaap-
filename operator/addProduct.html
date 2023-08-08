@@ -10,21 +10,31 @@
 </head>
 <body>
     <div class="main">
-        <form action="" class="addProduct">
+
+        <form  class="addProduct">
+
             <label for="Name">Name</label>
-            <input type="text">
+            <input type="text" name="Name" id="name">
+
+            <label for="Desc">Description</label>
+            <input type="text" name="Description" id="desc">
 
             <label for="Price">Price</label>
-            <input type="text">
+            <input type="text" name="Price" id="price">
 
             <label for="Stock">Stock</label>
-            <input type="text">
+            <input type="text" name="Stock" id="stock">
 
             <label for="Images">Images</label>
-            <input type="text">
+            <input id="file-input" type="file" name="Images" multiple >
+            <div class="chosen-images">
 
-            <button type="submit">Submit</button>
+            </div>
+
+            <button type="submit" class="submit">Submit</button>
         </form>
+
+       
     </div>
 </body>
 </html>

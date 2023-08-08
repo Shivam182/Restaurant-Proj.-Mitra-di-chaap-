@@ -23,3 +23,18 @@ input{
     padding: 0.1rem;
     margin-bottom: 0.5rem;
 }
+
+.chosen-images {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   row-gap: 0.2rem;
+   column-gap: 0.2rem;
+}
+
+.chosen-images img{
+    height: 5rem;
+    width: 5rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    margin-right: 0.1rem;
+}

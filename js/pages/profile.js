@@ -9,6 +9,19 @@ const urlSearchParams = new URLSearchParams(window.location.search);
 
 const userToken = urlSearchParams.get('userToken');
 
+const edit_btn = getElement('#edt-btn');
+
+
+
+edit_btn.addEventListener('click',function(){
+
+    // console.log('clicked');
+
+    location.href = 'edit.html?name=shivam&mail=jhwdh@gmail.com';
+    
+    });
+    
+    
 
 const url = 'http://localhost:9090/api/users/1';
 
@@ -93,5 +106,7 @@ function setUserDetails(name,mail){
     user_name.innerHTML = name+'<i class="fa fa-pencil"></i>';
     user_mail.innerHTML = mail+'<i class="fa fa-pencil"></i>';
 }
+
+
 
 
