@@ -26,7 +26,7 @@ function setItems () {
             <tr>
                     <td>${item.name}</td>
                     <td>${item.id}</td>
-                    <td>${item.email}</td>
+                    <td>${item.userMail}</td>
                     <td>Message_Link</td>
                 </tr>
             `;

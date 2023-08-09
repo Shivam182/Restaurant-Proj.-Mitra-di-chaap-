@@ -29,10 +29,10 @@ function setItems () {
         var str = response.map((item)=>{
             return `
             <tr>
-                    <td>${item.id}</td>
-                    <td>${item.status}</td>
+                    <td>${item.orderId}</td>
+                    <td>${JSON.parse(item.status).status}</td>
                     <td>${item.price}</td>
-                    <td>2/3/23</td>
+                    <td>${item.orderedOn}</td>
             </tr>
             `
         }).join('');

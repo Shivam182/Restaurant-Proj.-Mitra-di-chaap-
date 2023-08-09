@@ -28,8 +28,8 @@ function setItems() {
             <td>${item.itemId}</td>
             <td>${item.title}</td>
             <td>${item.price}</td>
-            <td>15</td>
-            <td>4.2</td>
+            <td>${item.stock}</td>
+            <td>${item.ratings}</td>
             <td>View_Link</td>
             <td>Edit_Product</td>
             </tr>
