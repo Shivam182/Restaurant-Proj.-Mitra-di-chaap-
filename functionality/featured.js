@@ -33,7 +33,7 @@ function makeRequest(i, length) {
       httpRequest.status === 200
     ) {
       var data = JSON.parse(httpRequest.responseText);
-      console.log('hey shivam'+  JSON.stringify(data))
+      // console.log('hey shivam'+  JSON.stringify(data))
       featured_items.items.push(JSON.stringify(data));
       makeRequest(i + 1, featured_items.featured.length);
     }
@@ -46,13 +46,13 @@ function setFootItems(featured_items) {
   var str = featured_items.items
     .map((item) => {
       const element = JSON.parse(item);
-      const imgURL = "http://localhost:9090/api/item/image/";
-
+      // const imgURL = "http://localhost:9090/api/item/image/";
+        console.log(JSON.stringify(element));
       return `
     <div class="food-card">
       <div class="card-content">
       <h3 class="item-title">${element.title}</h3>
-        <img src="${imgURL + element.itemId}" alt="food image" />
+        <img src="${element.image1}" alt="food image" />
         <p class="mini-description">
         ${element.description}
         </p>

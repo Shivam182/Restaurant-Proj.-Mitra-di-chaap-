@@ -256,6 +256,7 @@ h4{
 
 .result-area {
   display: none;
+  flex-direction: column;
   background-color: aliceblue;
   width: 100%;
   height: auto;
@@ -263,6 +264,21 @@ h4{
   border: transparent;
   border-radius: 0.2rem;
   padding: 0.2rem;
+}
+
+.result{
+  margin-bottom: 0.3rem;  
+  background-color: antiquewhite;
+  padding: 0.1rem;
+  text-transform: lowercase;
+  font-weight: 500;
+  font-family: cursive;
+}
+
+.result p {
+
+  font-size: 0.6rem;
+
 }
 
 .search-box {

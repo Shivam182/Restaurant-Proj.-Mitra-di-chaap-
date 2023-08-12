@@ -11,6 +11,8 @@ const dine_in_btn = getElement('.reservation-btn');
 const cart_btn = getElement('.goToCart');
 
 
+
+
 // console.log(cart_btn)
 
 dine_in_btn.addEventListener('click', function(){
@@ -20,7 +22,7 @@ dine_in_btn.addEventListener('click', function(){
 });
 
 cart_btn.addEventListener('click',function(){
-    console.log('clicked')
+    // console.log('clicked')
     location.assign('cart.html')
 });
 
