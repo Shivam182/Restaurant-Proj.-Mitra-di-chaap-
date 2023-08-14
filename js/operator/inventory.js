@@ -1,29 +1,69 @@
 import { getElement } from "../../utils/util.js";
-const itemsDiv = getElement('.inventory-table');
+const itemsDiv = getElement(".inventory-table");
 
+const searchName = getElement("#find-name");
+const searchCat = getElement("#find-cat");
+const searchNameBtn = getElement(".find-name");
+const searchCatBtn = getElement(".find-cat");
 
 var httpRequest;
-const url = 'http://localhost:9090/api/items';
+const url = "http://localhost:9090/api/items";
+
+var nameFilterUrl;
+var catFilterUrl;
 
 makeRequest(url);
 
+searchNameBtn.addEventListener("click", function () {
+  const text = searchName.value;
 
-function makeRequest(url){
-    httpRequest = new XMLHttpRequest();
-    httpRequest.open('GET',url,true);
-    httpRequest.setRequestHeader('Authorization','Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJleHAiOjE2ODE0ODcwNzgsImlhdCI6MTY4MTQ4NTI3OH0.HGOrlT-3XwbJSKVCbbCHivPedu3OF7-A8pDM-2ewGjQhkZ6t8tVmfdLwWlmM6dJCn0CmK_UomYUw82W4TUCLKw')
-    httpRequest.onreadystatechange = setItems;
-    httpRequest.send();
+  if (text == "") {
+    alert("Please Provide Input.");
+  } else {
+    nameFilterUrl = `http://localhost:9090/api/query/${text}`;
+    makeRequest(nameFilterUrl);
+    itemsDiv.innerHTML = "";
+  }
+});
+
+searchCatBtn.addEventListener("click", function () {
+  const txt = searchCat.value;
+
+  if (txt == "") {
+    alert("Please provide input");
+  } else {
+    catFilterUrl = `http://localhost:9090/api/category/${txt}/items`;
+    makeRequest(catFilterUrl);
+    itemsDiv.innerHTML = "";
+  }
+});
+
+function makeRequest(url) {
+  httpRequest = new XMLHttpRequest();
+  httpRequest.open("GET", url, true);
+  httpRequest.setRequestHeader(
+    "Authorization",
+    "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJleHAiOjE2ODE0ODcwNzgsImlhdCI6MTY4MTQ4NTI3OH0.HGOrlT-3XwbJSKVCbbCHivPedu3OF7-A8pDM-2ewGjQhkZ6t8tVmfdLwWlmM6dJCn0CmK_UomYUw82W4TUCLKw"
+  );
+  httpRequest.onreadystatechange = setItems;
+  httpRequest.send();
 }
 
 function setItems() {
+  if (
+    httpRequest.readyState === XMLHttpRequest.DONE &&
+    httpRequest.status === 200
+  ) {
+    const response = JSON.parse(httpRequest.responseText);
 
+    // console.log(JSON.stringify(response))
+    var str;
 
-    if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200){
-        const response = JSON.parse(httpRequest.responseText);
-        
-        var str = response.content.map((item)=>{
-            return `
+    if (response.content) {
+
+       str = response.content
+        .map((item) => {
+          return `
             <tr>
             <td>${item.itemId}</td>
             <td>${item.title}</td>
@@ -34,9 +74,29 @@ function setItems() {
             <td>Edit_Product</td>
             </tr>
             `;
-        }).join('');
+        })
+        .join("");
 
-        itemsDiv.innerHTML = `
+    }
+    else{
+
+       str =  response.map((item)=>{
+            return `
+            <tr>
+            <td>${item.itemId}</td>
+            <td>${item.title}</td>
+            <td>${item.price}</td>
+            <td>${item.stock}</td>
+            <td>${item.ratings}</td>
+            <td>View_Link</td>
+            <td>Edit_Product</td>
+            </tr>
+            `
+        }).join('')
+       
+    }
+
+    itemsDiv.innerHTML = `
         <table>
         <tr>
         <th>Item Id</th>
@@ -50,6 +110,6 @@ function setItems() {
 
     ${str}
         </table>
-        `
-    }
+        `;
+  }
 }
