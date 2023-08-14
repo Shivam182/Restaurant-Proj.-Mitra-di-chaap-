@@ -1,10 +1,42 @@
 import { getElement } from "../../utils/util.js";
 const usrs = getElement(".user-table");
 
+const searchId = getElement("#find-id");
+const searchName = getElement("#find-name");
+const searchIdBtn = getElement(".find-id");
+const searchNameBtn = getElement(".find-name");
+
 var httpRequest;
 const url = "http://localhost:9090/api/users/all";
 
+var nameFilterUrl;
+var idFilterUrl;
+
 makeRequest(url);
+
+searchIdBtn.addEventListener("click", function () {
+  const text = searchId.value;
+
+  if (text == "") {
+    alert("Please Provide Input.");
+  } else {
+    idFilterUrl = `http://localhost:9090/api/users/${text}`;
+    makeRequest(idFilterUrl);
+    usrs.innerHTML = "";
+  }
+});
+
+searchNameBtn.addEventListener("click", function () {
+  const txt = searchName.value;
+
+  if (txt == "") {
+    alert("Please provide input");
+  } else {
+    nameFilterUrl = `http://localhost:9090/api/users/name/${txt}`;
+    makeRequest(nameFilterUrl);
+    usrs.innerHTML = '';
+  }
+});
 
 function makeRequest(url) {
   httpRequest = new XMLHttpRequest();
@@ -27,9 +59,12 @@ function setUsers() {
     const response = JSON.parse(httpRequest.responseText);
     console.log(JSON.stringify(response)); // data recieved successfully
 
-    var str = response
-      .map((item) => {
-        return `
+    var str;
+
+    if (response.length) {
+       str = response
+        .map((item) => {
+          return `
         <tr>
         <td>${item.name}</td>
         <td>${item.id}</td>
@@ -37,8 +72,24 @@ function setUsers() {
         <td>Cart Link</td>
         </tr> 
             `;
-      })
-      .join("");
+        })
+        .join("");
+
+     
+    } else {
+
+        var str = `
+        <tr>
+        <td>${response.name}</td>
+        <td>${response.id}</td>
+        <td>${response.email}</td>
+        <td>Cart Link</td>
+        </tr> 
+        `
+
+
+        
+    }
 
     usrs.innerHTML = `
     <table>
