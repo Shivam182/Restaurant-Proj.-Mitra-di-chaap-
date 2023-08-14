@@ -152,7 +152,7 @@
          
             <h1>reserve a table</h1>
             <div class="reservation-form">
-              <form action="" method="post">
+              <form id="re-form">
                 <label for="party_size">Party Size:</label>
 
                 <select name="party_size" id="party_size">
@@ -163,10 +163,10 @@
                 </select>
 
                 <label for="date">Date:</label>
-                <input type="date" name="date" />
+                <input type="date" name="date" id="party-date"/>
 
                 <label for="time">Time:</label>
-                <input type="time" name="time" />
+                <input type="time" name="time" id="party-time"/>
               </form>
               <button type="submit" class="find-table">find a table</button>
             </div>

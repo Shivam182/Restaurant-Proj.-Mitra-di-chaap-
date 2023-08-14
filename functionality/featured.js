@@ -47,7 +47,7 @@ function setFootItems(featured_items) {
     .map((item) => {
       const element = JSON.parse(item);
       // const imgURL = "http://localhost:9090/api/item/image/";
-        console.log(JSON.stringify(element));
+        // console.log(JSON.stringify(element));
       return `
     <div class="food-card">
       <div class="card-content">
