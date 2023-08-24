@@ -34,31 +34,6 @@ h4 {
   text-transform: capitalize;
 }
 
-/* h1{
-    font-size: 3rem;
-}
-
-h2{
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.25rem;
-}
-
-h4{
-    font-size: 0.875rem;
-} */
-
-/* p {
-    margin-bottom: 1.25rem;
-    color: rgb(146, 140, 140);
-} */
-
-/* .img {
-    width: 100%;
-    height: auto;
-} */
 
 .text-slanted {
   font-family: "Kaushan Script", cursive;
@@ -160,7 +135,6 @@ h4{
 }
 
 .expand-box {
-  /* display: block; */
   height: 5rem;
   width: 9rem;
   background: #545a6f;
@@ -209,7 +183,6 @@ h4{
 }
 
 .logo-container .name {
-  /* margin-top: 1rem; */
   padding: 0.5rem;
   font-weight: 400;
   font-size: 1rem;
@@ -239,7 +212,6 @@ h4{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 2px solid black; */
 }
 
 .search-area {
@@ -693,17 +665,7 @@ h4{
   }
 
   .head-center {
-    /* border: 2px solid; */
     width: 100%;
-  }
-
-  .top-container-first {
-    /* border: 2px solid; */
-    /* background-color: #331979; */
-  }
-
-  .top-title {
-    /* border: 2px solid; */
   }
 
   .btns-header span {
@@ -713,9 +675,7 @@ h4{
 
   .login-signup {
     margin-right: 1rem;
-    /* padding-top: 0.5rem;
-    padding-bottom: 0.5rem; */
-    /* border: 2px solid; */
+   
     width: 9.5rem;
   }
 
@@ -729,10 +689,7 @@ h4{
     font-size: 1.1rem;
   }
 
-  .login-signup {
-    /* border: 2px solid; */
-    /* margin-right: 0; */
-  }
+  
 }
 
 /* Works for all the devices that has width under 820px.*/
@@ -755,62 +712,18 @@ h4{
     font-size: 0.7rem;
   }
 
-  /* .head-center{
-        display: flex;
-        justify-content: space-between;
-    }
-
-
-    .top-title {
-        margin-left: 1rem;
-    }
-   
-    .btns-header{
-        margin-right: 0.5rem;
-    }
-    
-    .btns-header span{
-        padding: 0.6rem;
-    } */
-
-  /* .navbar{
-        height: 10vh;
-    } */
+  
 
   .intro h1 {
     font-size: 5rem;
     margin-bottom: 2.9rem;
   }
 
-  /* .tagline{
-        font-size: 1.5rem;
-    } */
 
   .navbar-link {
     font-size: 1.4rem;
     padding: 1rem;
   }
-
-  /* .featured{
-        padding: 1rem;
-        grid-template-columns: 1fr 1fr;
-        margin-top: 2rem;
-    } */
-  /* 
-    .intro-title{
-        font-size: 2rem;
-        color: rgb(255, 255, 255);
-    } */
-
-  /* .logo-container .name{
-        font-size: 0.9rem;
-        line-height: 1rem;
-    } */
-
-  /* .logo-container img{
-        height: auto;
-        width: 50px;
-    } */
 
   .nav-btns {
     display: none;
@@ -824,7 +737,6 @@ h4{
 @media screen and (max-width: 745px) {
   #up-header-line {
     font-size: 1rem;
-    /* border: 2px solid; */
   }
 }
 
@@ -864,18 +776,9 @@ h4{
   }
 
   .head-center {
-    /* border: 2px solid; */
     width: 100%;
   }
 
-  .top-container-first {
-    /* border: 2px solid; */
-    /* background-color: #331979; */
-  }
-
-  .top-title {
-    /* border: 2px solid; */
-  }
 
   .btns-header span {
     padding: 0.4rem;
@@ -884,14 +787,11 @@ h4{
 
   .login-signup {
     margin-right: 0rem;
-    /* padding-top: 0.5rem;
-    padding-bottom: 0.5rem; */
-    /* border: 2px solid; */
+   
     width: 6.5rem;
   }
 
   .login-signup button {
-    /* margin-top: 0; */
     font-size: 0.9rem;
     padding: 0.06rem;
   }
@@ -920,14 +820,10 @@ h4{
 
   .login-signup {
     margin-right: 0rem;
-    /* padding-top: 0.5rem;
-        padding-bottom: 0.5rem; */
-    /* border: 2px solid; */
     width: 6.5rem;
   }
 
   .login-signup button {
-    /* margin-top: 0; */
     font-size: 0.6rem;
     padding: 0.06rem;
   }
@@ -973,7 +869,6 @@ h4{
   }
 
   .nav-btns {
-    /* visibility: hidden; */
     display: none;
   }
 

@@ -14,8 +14,6 @@
     <script src="../functionality/featured.js" defer type="module"></script>
   </head>
   <body>
-
-
     <!-- navbar -->
     <nav id="navbar" class="navbar">
       <!-- navbar header -->
@@ -93,11 +91,15 @@
           </button>
           <div class="search-box">
             <div class="search-container">
-
               <div class="search-area">
-                <input type="text" name="search" placeholder="Enter here" id="search-box"/>
+                <input
+                  type="text"
+                  name="search"
+                  placeholder="Enter here"
+                  id="search-box"
+                />
                 <button type="submit" class="search-query">Search</button>
-               
+
                 <i class="fa fa-close"></i>
               </div>
 
@@ -112,8 +114,6 @@
                   <a href="">Item 1</a>
                 </h4> -->
               </div>
-
-
             </div>
           </div>
           <button class="order-online-btn">order online</button>
@@ -139,9 +139,9 @@
       <!-- order section -->
       <section class="order">
         <div class="online-order">
-           <h3>order online</h3>
+          <h3>order online</h3>
           <img src="../images/delivery.png" alt="delivery" />
-         
+
           <!-- <h2 class="catch-line">
             delicious indian cusines on your way sir ji
           </h2> -->
@@ -149,28 +149,26 @@
         </div>
 
         <div class="reservation">
-         
-            <h1>reserve a table</h1>
-            <div class="reservation-form">
-              <form id="re-form">
-                <label for="party_size">Party Size:</label>
+          <h1>reserve a table</h1>
+          <div class="reservation-form">
+            <form id="re-form">
+              <label for="party_size">Party Size:</label>
 
-                <select name="party_size" id="party_size">
-                  <option value="2">2 Guests</option>
-                  <option value="3">3 Guests</option>
-                  <option value="4">4 Guests</option>
-                  <option value="6">6 Guests</option>
-                </select>
+              <select name="party_size" id="party_size">
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="6">6 Guests</option>
+              </select>
 
-                <label for="date">Date:</label>
-                <input type="date" name="date" id="party-date"/>
+              <label for="date">Date:</label>
+              <input type="date" name="date" id="party-date" />
 
-                <label for="time">Time:</label>
-                <input type="time" name="time" id="party-time"/>
-              </form>
-              <button type="submit" class="find-table">find a table</button>
-            </div>
-          
+              <label for="time">Time:</label>
+              <input type="time" name="time" id="party-time" />
+            </form>
+            <button type="submit" class="find-table">find a table</button>
+          </div>
         </div>
       </section>
 
@@ -216,7 +214,5 @@
         <span>All rights reserved &copy Mitra di chaap 2023</span>
       </div>
     </footer>
-
-
   </body>
 </html>

@@ -1,112 +1,86 @@
-import { getElement } from "../../utils/util.js";
+import { getElement,getStorage } from "../../utils/util.js";
 
-const username = getElement('#userName');
-const user_name = getElement('#name');
-const user_mail = getElement('#mail');
-const user_password = getElement('#password');
-
-const urlSearchParams = new URLSearchParams(window.location.search);
-
-const userToken = urlSearchParams.get('userToken');
-
-const edit_btn = getElement('#edt-btn');
+const username = getElement("#userName");
+const user_name = getElement("#name");
+const user_mail = getElement("#mail");
+const user_password = getElement("#password");
+const dashboard = getElement('#operator-access');
 
 
+const edit_btn = getElement("#edt-btn");
 
-edit_btn.addEventListener('click',function(){
+const userToken = getStorage('token');
+const role = getStorage('role');
 
-    // console.log('clicked');
+if(!userToken || userToken.length == 0){
+  window.location.href = `login.html`;
+}
 
-    location.href = 'edit.html?name=shivam&mail=jhwdh@gmail.com';
-    
-    });
-    
-    
+if(role == 'NORMAL'){
+  dashboard.style.display = 'none';
+}
 
-const url = 'http://localhost:9090/api/users/1';
+
+const email = parseJwt(userToken).sub;
+
+const url = "http://localhost:9090/api/users/email/" + email;
 
 var httpRequest;
 
-// console.log('user token: ' +userToken);
 
 
-// if (userToken === null) {
-//     console.log('here eeee')
-//     window.location.href = 'login.html';
-// }
 
-// get user details from the user token 
+// get user details from the user token
 makeRequest(url);
 
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    window
+      .atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
 
-
-const name = parseJwt(userToken).sub;
-username.innerHTML = name;
-// console.log('token value'+ JSON.stringify(parseJwt(userToken)));
-
-
-function parseJwt (token) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-
-    return JSON.parse(jsonPayload);
+  return JSON.parse(jsonPayload);
 }
 
-function makeRequest(url){
-    httpRequest = new XMLHttpRequest();
-    if (!httpRequest) {
-        console.log('Cannot create an http request');
-        return;
+function makeRequest(url) {
+  httpRequest = new XMLHttpRequest();
+  if (!httpRequest) {
+    return;
+  }
+
+  httpRequest.onreadystatechange = getUserDetails;
+
+  httpRequest.open("GET", url, true);
+
+  httpRequest.setRequestHeader("Authorization", userToken);
+
+  httpRequest.send();
+}
+
+function getUserDetails() {
+  try {
+    if (httpRequest.status === 200) {
+      try {
+        var response = JSON.parse(httpRequest.responseText);
+        user_name.innerHTML = response.name;
+        user_mail.innerHTML = response.email;
+        username.innerHTML = response.name;
+      } catch (error) {
+        // alert('Sorry for the Inconvienience , Some error has occured. Please try after sometime.' + error);
+      }
     }
-
-    httpRequest.onreadystatechange = getUserDetails;
-
-    httpRequest.open('GET',url,true);
-    // httpRequest.setRequestHeader('Access-Control-Allow-Methods','*');
-    // httpRequest.setRequestHeader('Access-Control-Allow-Origin','*');
-    httpRequest.setRequestHeader('Authorization',`Bearer ${userToken}`)
-    // httpRequest.setRequestHeader(
-    //     "Content-Type",
-    //     "application/json"
-    // )
-        
-    httpRequest.send();
-    // console.log('i ran ......')
-}
-
-
-function getUserDetails(){
-//    console.log('helll...');
-
-//    console.log(httpRequest.status);
-//    console.log(httpRequest.responseText);
-
-   try {
-      if (httpRequest.status === 200) {
-        try { 
-            var response = JSON.parse(httpRequest.responseText);
-            // console.log('user details: '+ httpRequest.responseText.name);
-            console.log('response: '+JSON.stringify(response))
-            setUserDetails(response.name,response.email);
-        } catch (error) {
-            console.log('Something went wrong: '+ error);
-        }
-    }
-   } catch (error) {
-    console.log('some error: '+error);
-   }
-  
-}
-
-
-function setUserDetails(name,mail){
-    user_name.innerHTML = name+'<i class="fa fa-pencil"></i>';
-    user_mail.innerHTML = mail+'<i class="fa fa-pencil"></i>';
+  } catch (error) {}
 }
 
 
 
-
+edit_btn.addEventListener("click", function () {
+  location.href = `edit.html?name=${user_name.innerHTML}&mail=${user_mail.innerHTML}`;
+});

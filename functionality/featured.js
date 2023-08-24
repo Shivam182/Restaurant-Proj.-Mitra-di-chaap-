@@ -1,17 +1,13 @@
 import { getElement } from "../utils/util.js";
 const featured_section = getElement(".featured");
 
-// get featured item's ids from operator backend and fetch those items from customer backend.
-
 var httpRequest;
 var featured_items = {
   featured: ["9", "3", "7"],
   items: [],
 };
 
-var url = "http://localhost:9090/api/item/";
-
-const images = [];
+var url = "http://localhost:9090/api/item/get/";
 
 httpRequest = new XMLHttpRequest();
 makeRequest(0, featured_items.featured.length);
@@ -23,17 +19,16 @@ function makeRequest(i, length) {
   }
 
   httpRequest.open("GET", url + featured_items.featured[i]);
-  httpRequest.setRequestHeader(
-    "Authorization",
-    "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJleHAiOjE2ODE0NzgxNjUsImlhdCI6MTY4MTQ3NjM2NX0.wLgwuu76FKgJmFvo6xP-_iExbNJLyetWbf3c2a_3udsfeWwdBhGal6VFKZyzCYpIISFMcO7AYiwpjyEFaBzBNg"
-  );
+  // httpRequest.setRequestHeader(
+  //   "Authorization",
+  //   "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJleHAiOjE2ODE0NzgxNjUsImlhdCI6MTY4MTQ3NjM2NX0.wLgwuu76FKgJmFvo6xP-_iExbNJLyetWbf3c2a_3udsfeWwdBhGal6VFKZyzCYpIISFMcO7AYiwpjyEFaBzBNg"
+  // );
   httpRequest.onreadystatechange = () => {
     if (
       httpRequest.readyState === XMLHttpRequest.DONE &&
       httpRequest.status === 200
     ) {
       var data = JSON.parse(httpRequest.responseText);
-      // console.log('hey shivam'+  JSON.stringify(data))
       featured_items.items.push(JSON.stringify(data));
       makeRequest(i + 1, featured_items.featured.length);
     }
@@ -46,8 +41,7 @@ function setFootItems(featured_items) {
   var str = featured_items.items
     .map((item) => {
       const element = JSON.parse(item);
-      // const imgURL = "http://localhost:9090/api/item/image/";
-        // console.log(JSON.stringify(element));
+
       return `
     <div class="food-card">
       <div class="card-content">
@@ -64,8 +58,6 @@ function setFootItems(featured_items) {
     </div>`;
     })
     .join("");
-
-  //    console.log(str);
 
   featured_section.innerHTML = str;
 }

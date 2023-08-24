@@ -1,224 +1,190 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
-html, body {
-    margin: 0;
-    height: 100%;
+html,
+body {
+  margin: 0;
+  height: 100%;
 }
 
-body{
-background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.5)), url(../images/login-back.jpg);
-background-position: center;
-background-repeat: no-repeat;
-background-size:cover;
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    url(../images/login-back.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/*hide scrollbar but keep the functionality.*/
 body::-webkit-scrollbar {
-    display: none;
-    
-  }
-
-main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* background-color: #fff; */
+  display: none;
 }
 
-
-.container{
-    border-radius: 1rem;
-    /* box-shadow: 3px 3px rgb(255, 255, 255), -1em 0 .4em rgb(193, 171, 171); */
-    padding: 2rem;
-
-
-    /* background-color: rgb(55, 27, 197); */
-    margin-top: 4rem;
-   
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.title{
-    display: flex;
-    justify-content: space-evenly;
-    text-transform: capitalize;
-    font-family:'kaushan script' ,cursive;
-    letter-spacing: 0.1rem;
-    /* width: 100%; */
-    align-items: center;
-    font-size: 0.7rem;
-    /* border: 2px solid; */
-    /* border-radius: 50px; */
-    /* border: 2px solid; */
-    
+.container {
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-top: 4rem;
 }
 
-.title-container{
-
-    display: flex;
-    flex-direction: row;
-    /* border: 2px solid; */
-    padding: 0.4rem;
-    /* width: 75%; */
-    border-radius: 0.8rem;
+.title {
+  display: flex;
+  justify-content: space-evenly;
+  text-transform: capitalize;
+  font-family: "kaushan script", cursive;
+  letter-spacing: 0.1rem;
+  align-items: center;
+  font-size: 0.7rem;
 }
 
-.signup{
-    background-color: #fff;
-    /* width: 50%; */
-    text-align: center;
-    /* border-radius: 10%; */
-    padding-right: 0.6rem;
-    padding-left: 0.6rem;
-}
-.signup:hover{
-    cursor: pointer;
+.title-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0.4rem;
+  border-radius: 0.8rem;
 }
 
-.login{
-    padding-right: 0.6rem;
-    padding-left: 0.6rem;
-    /* width: 50%; */
-    text-align: center;
-    background-color: grey;
-    
+.signup {
+  background-color: #fff;
+  text-align: center;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+}
+.signup:hover {
+  cursor: pointer;
 }
 
-.login:hover{
-    cursor: pointer;
+.login {
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+  text-align: center;
+  background-color: grey;
 }
 
-.form-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.1rem;
-    font-weight: 652;
-    margin-top: 1.5rem;
-   
+.login:hover {
+  cursor: pointer;
+}
+
+.form-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 652;
+  margin-top: 1.5rem;
 }
 
 .form-box label {
-    display: block;
-    margin-top: 0.5rem;
+  display: block;
+  margin-top: 0.5rem;
 }
 
-.form-box input{
-    border: transparent;
-    background-color: rgb(229, 234, 240);
-    border-radius: 0.6rem;
-    padding: 0.6rem;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
+.form-box input {
+  border: transparent;
+  background-color: rgb(229, 234, 240);
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-
-.login-box{
-    display: none;
+.login-box {
+  display: none;
 }
 
-.signup-box{
-    display: none;
+.signup-box {
+  display: none;
 }
 
-.show{
-    display: block;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.show {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-
-
-
-
-.login-form{
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 1rem;
+.login-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
-.login-btn{
-    margin-left: 5rem;
-    margin-top: 0.5rem;
-    padding: 0.6rem;
-    border: transparent;
-    border-radius: 0.6rem;
-    background-color: antiquewhite;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.login-btn {
+  margin-left: 5rem;
+  margin-top: 0.5rem;
+  padding: 0.6rem;
+  border: transparent;
+  border-radius: 0.6rem;
+  background-color: antiquewhite;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.login-btn:hover{
-    background-color: brown;
-    color: #fff;
-    cursor: pointer;
+.login-btn:hover {
+  background-color: brown;
+  color: #fff;
+  cursor: pointer;
 }
 
-.forgot-pass{
-    margin-left: 2.5rem;
+.forgot-pass {
+  margin-left: 2.5rem;
 }
 
-.forgot-pass:hover{
-    cursor: pointer;
-    color: blue;
-    text-decoration: underline;
+.forgot-pass:hover {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
 }
 
-.signup-form{
-    background-color: #fff;
-    padding: 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* flex-direction: row; */
-    column-gap: 2rem;
-    border-radius: 1rem;
-    /* text-align: center; */
+.signup-form {
+  background-color: #fff;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  border-radius: 1rem;
 }
 
-
-
-.signup-btn{
-    margin-top: 0.5rem;
-    padding: 0.6rem;
-    border: transparent;
-    border-radius: 0.6rem;
-    background-color: antiquewhite;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.signup-btn {
+  margin-top: 0.5rem;
+  padding: 0.6rem;
+  border: transparent;
+  border-radius: 0.6rem;
+  background-color: antiquewhite;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.signup-btn:hover{
-    background-color: brown;
-    color: #fff;
-    cursor: pointer;
+.signup-btn:hover {
+  background-color: brown;
+  color: #fff;
+  cursor: pointer;
 }
 
-#pic{
-    width: 10rem;
+#pic {
+  width: 10rem;
 }
 
-#pic::file-selector-button{
-    border: transparent;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: grey;
-    /* padding: 0.5rem; */
-    border-radius: 0.2rem;
-    color: #fff;
-    /* width: 2rem; */
+#pic::file-selector-button {
+  border: transparent;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: grey;
+  border-radius: 0.2rem;
+  color: #fff;
 }
 
-
-.err-msg{
-    display: none;
-    font-size: 0.65rem;
-    color: red;
-    font-weight: bold;
-    padding: 0.5rem;
+.err-msg {
+  display: none;
+  font-size: 0.65rem;
+  color: red;
+  font-weight: bold;
+  padding: 0.5rem;
 }
 
-.form-err{
-    font-size: 0.55rem;
-    color: red;
-    font-weight: bold;
+.form-err {
+  font-size: 0.55rem;
+  color: red;
+  font-weight: bold;
 }

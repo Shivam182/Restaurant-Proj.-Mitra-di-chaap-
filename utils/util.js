@@ -1,48 +1,32 @@
-const allProductsUrl = '';
-
+const allProductsUrl = "";
 
 // getHTML DOM elements
-const getElement = (selection) =>{
-    const element  = document.querySelector(selection);
+const getElement = (selection) => {
+  const element = document.querySelector(selection);
 
-    if (element) {
-        return element;
-        throw new Error(`Please check ${selection} selector, no such element exists.`);
-    }
-
-    
-}
-
+  if (element) {
+    return element;
+  }
+};
 
 // fetch items from the local storage
-const getStorage = (item) =>{
-    let storageItem = localStorage.getItem(item);
+const getStorage = (item) => {
+  let storageItem = localStorage.getItem(item);
 
-    if (storageItem) {
+  if (storageItem) {
+    // converts a JSON string into a Javascript object.
+    storageItem = JSON.parse(localStorage.getItem(item));
+  } else {
+    // if string not found then return an empty JS Object.
+    storageItem = [];
+  }
 
-        // converts a JSON string into a Javascript object.
-        storageItem = JSON.parse(localStorage.getItem(item));
-    }else{
-
-        // if string not found then return an empty JS Object.
-        storageItem = [];
-    }
-
-    return storageItem;
-}
-
-
+  return storageItem;
+};
 
 // place items into local storage
-const setStorageItem = (name,item) =>{
-    localStorage.setItem(name, JSON.stringify(item));
-}
+const setStorageItem = (name, item) => {
+  localStorage.setItem(name, JSON.stringify(item));
+};
 
-
-
-export {
-    allProductsUrl,
-    getElement,
-    getStorage,
-    setStorageItem,    
-}
+export { allProductsUrl, getElement, getStorage, setStorageItem };

@@ -53,15 +53,12 @@ function makeRequest(url) {
 }
 
 function setItems() {
-  //   console.log(httpRequest.status);
-
   if (
     httpRequest.readyState === XMLHttpRequest.DONE &&
     httpRequest.status === 200
   ) {
     const response = JSON.parse(httpRequest.responseText);
 
-    console.log(JSON.stringify(response));
     var str;
 
     if (response.length >= 0) {
@@ -87,18 +84,6 @@ function setItems() {
                 </tr>
                 `;
     }
-
-    // else {
-
-    //     console.log(response)
-    //   if (!response) {
-
-    //     str = ``;
-
-    //   } else {
-    //
-    //   }
-    // }
 
     orderDiv.innerHTML = `
         <table>

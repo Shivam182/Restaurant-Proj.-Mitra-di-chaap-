@@ -34,7 +34,7 @@ searchNameBtn.addEventListener("click", function () {
   } else {
     nameFilterUrl = `http://localhost:9090/api/users/name/${txt}`;
     makeRequest(nameFilterUrl);
-    usrs.innerHTML = '';
+    usrs.innerHTML = "";
   }
 });
 
@@ -50,19 +50,16 @@ function makeRequest(url) {
 }
 
 function setUsers() {
-  // console.log(httpRequest.status)
-
   if (
     httpRequest.readyState === XMLHttpRequest.DONE &&
     httpRequest.status === 200
   ) {
     const response = JSON.parse(httpRequest.responseText);
-    console.log(JSON.stringify(response)); // data recieved successfully
 
     var str;
 
     if (response.length) {
-       str = response
+      str = response
         .map((item) => {
           return `
         <tr>
@@ -74,21 +71,15 @@ function setUsers() {
             `;
         })
         .join("");
-
-     
     } else {
-
-        var str = `
+      var str = `
         <tr>
         <td>${response.name}</td>
         <td>${response.id}</td>
         <td>${response.email}</td>
         <td>Cart Link</td>
         </tr> 
-        `
-
-
-        
+        `;
     }
 
     usrs.innerHTML = `

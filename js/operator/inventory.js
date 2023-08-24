@@ -56,12 +56,10 @@ function setItems() {
   ) {
     const response = JSON.parse(httpRequest.responseText);
 
-    // console.log(JSON.stringify(response))
     var str;
 
     if (response.content) {
-
-       str = response.content
+      str = response.content
         .map((item) => {
           return `
             <tr>
@@ -76,12 +74,10 @@ function setItems() {
             `;
         })
         .join("");
-
-    }
-    else{
-
-       str =  response.map((item)=>{
-            return `
+    } else {
+      str = response
+        .map((item) => {
+          return `
             <tr>
             <td>${item.itemId}</td>
             <td>${item.title}</td>
@@ -91,9 +87,9 @@ function setItems() {
             <td>View_Link</td>
             <td>Edit_Product</td>
             </tr>
-            `
-        }).join('')
-       
+            `;
+        })
+        .join("");
     }
 
     itemsDiv.innerHTML = `

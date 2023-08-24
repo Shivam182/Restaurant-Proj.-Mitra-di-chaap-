@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/addProduct.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/addProduct.css" />
 
     <script type="module" src="../js/operator/addProduct.js"></script>
     <title>Add Product</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main">
+      <form class="addProduct" name="add-product">
+        <label for="Name">Name</label>
+        <input type="text" name="Name" id="item-name" />
 
-        <form  class="addProduct">
+        <label for="Desc">Description</label>
+        <input type="text" name="Description" id="desc" />
 
-            <label for="Name">Name</label>
-            <input type="text" name="Name" id="name">
+        <label for="Price">Price</label>
+        <input type="text" name="Price" id="price" />
 
-            <label for="Desc">Description</label>
-            <input type="text" name="Description" id="desc">
+        <label for="Stock">Stock</label>
+        <input type="text" name="Stock" id="stock" />
 
-            <label for="Price">Price</label>
-            <input type="text" name="Price" id="price">
+        <label for="image">Product images:</label>
+        <input id="image" type="file" name="image" multiple />
 
-            <label for="Stock">Stock</label>
-            <input type="text" name="Stock" id="stock">
+        <div class="chosen-images"></div>
 
-            <label for="Images">Images</label>
-            <input id="file-input" type="file" name="Images" multiple >
-            <div class="chosen-images">
-
-            </div>
-
-            <button type="submit" class="submit">Submit</button>
-        </form>
-
-       
+        <button type="submit" class="submit">Submit</button>
+      </form>
     </div>
-</body>
+  </body>
 </html>

@@ -1,112 +1,93 @@
-import { getElement } from '../../utils/util.js'
-import '../common/navbar.js'
-import '../common/topheader.js'
+import { getElement } from "../../utils/util.js";
+import "../common/navbar.js";
+import "../common/topheader.js";
 
-const order_now = getElement('.order-now');
-const order_btn = getElement('.order-btn');
-const find_table_btn = getElement('.find-table');
-const featured_section = getElement('.featured');
-const add_order_btn = getElement('.add-order');
-const partydate = getElement('#party-date');
-const partysize = getElement('#party_size');
-const partytime = getElement('#party-time');
+const order_now = getElement(".order-now");
+const order_btn = getElement(".order-btn");
+const find_table_btn = getElement(".find-table");
+const featured_section = getElement(".featured");
+const add_order_btn = getElement(".add-order");
+const partydate = getElement("#party-date");
+const partysize = getElement("#party_size");
+const partytime = getElement("#party-time");
 
 var httpReq;
-var tktUrl = 'http://localhost:9090/api/ticketing/create';
-var usrUrl = 'http://localhost:9090/api/users/2';
-
-
+var tktUrl = "http://localhost:9090/api/ticketing/create";
+var usrUrl = "http://localhost:9090/api/users/2";
 
 const ticketData = {
-    'name':'',
-    'time':'',
-    'tableSize':'',
-    'id':'',
-    'userId':''
-}
+  name: "",
+  time: "",
+  tableSize: "",
+  id: "",
+  userId: "",
+};
 
 const user = {
-    'name':'',
-    'id':'',
-}
+  name: "",
+  id: "",
+};
 
 fetchUser(usrUrl);
 var httpReq1;
 
-function fetchUser(url){
-    httpReq1 = new XMLHttpRequest();
-    httpReq1.open('GET',url,true);
-    httpReq1.setRequestHeader('Authorization','Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1lc2hAZ21haWwuY29tIiwiZXhwIjoxNjkxOTM0MDYxLCJpYXQiOjE2OTE5MzIyNjF9.-HNYWthki9H2636KUJoGfl3OjP4n_IovX-owJ70a40CEgdNbtCG_1LjzECpt2NduWr46yWVJpmXZWgUqVl80Jw');
-    httpReq1.onreadystatechange = setUserDetails;
-    httpReq1.send();
+function fetchUser(url) {
+  httpReq1 = new XMLHttpRequest();
+  httpReq1.open("GET", url, true);
+  httpReq1.setRequestHeader(
+    "Authorization",
+    "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1lc2hAZ21haWwuY29tIiwiZXhwIjoxNjkxOTM0MDYxLCJpYXQiOjE2OTE5MzIyNjF9.-HNYWthki9H2636KUJoGfl3OjP4n_IovX-owJ70a40CEgdNbtCG_1LjzECpt2NduWr46yWVJpmXZWgUqVl80Jw"
+  );
+  httpReq1.onreadystatechange = setUserDetails;
+  httpReq1.send();
 }
 
-function setUserDetails(){
-
-    if(httpReq1.readyState === XMLHttpRequest.DONE && httpReq1.status === 200){
-        const res = JSON.parse(httpReq1.responseText);
-        // console.log(JSON.stringify(res));
-        user.name = res.name;
-        user.id = res.id;
-    }
-
+function setUserDetails() {
+  if (httpReq1.readyState === XMLHttpRequest.DONE && httpReq1.status === 200) {
+    const res = JSON.parse(httpReq1.responseText);
+    user.name = res.name;
+    user.id = res.id;
+  }
 }
 
-order_now.addEventListener('click', function(){
-    location.assign('menu.html');
+order_now.addEventListener("click", function () {
+  location.assign("menu.html");
 });
 
-order_btn.addEventListener('click', function(){
-    location.assign('menu.html'); // must go to cart directly. with the element.
+order_btn.addEventListener("click", function () {
+  location.assign("menu.html"); // must go to cart directly. with the element.
 });
 
-find_table_btn.addEventListener('click', function(){
+find_table_btn.addEventListener("click", function () {
+  if (partydate.value == "" || partysize.value == "" || partytime.value == "") {
+    alert("Please Fill All The Fields.");
+  } else {
+    const d = new Date();
+    ticketData.name = user.name;
+    ticketData.tableSize = partysize.value;
+    ticketData.time = partytime.value;
+    ticketData.userId = user.id;
 
-    // console.log(partytime.value == '');
-    // fundTableReq(url);
-
-    // open ticket modal
-   // location.assign('ticket.html') // if all fields are filled only then . 
-
-   if(partydate.value == '' || partysize.value == '' || partytime.value == ''){
-
-        alert('Please Fill All The Fields.');
-
-   }else{
-        const d = new Date();
-        // ticketData.id = user.name.substring(0,4).trim() + d.getMilliseconds();
-        ticketData.name = user.name;
-        ticketData.tableSize = partysize.value;
-        ticketData.time = partytime.value;
-        ticketData.userId = user.id;
-
-        // console.log(JSON.stringify(user));
-
-        findTable(tktUrl);
-   }
-
+    findTable(tktUrl);
+  }
 });
 
-
-function findTable(url){
-
-    httpReq = new XMLHttpRequest();
-    httpReq.open('POST',url,true);
-    httpReq.setRequestHeader('Content-Type','application/json');
-    httpReq.setRequestHeader('Authorization','Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1lc2hAZ21haWwuY29tIiwiZXhwIjoxNjkxOTM0MDYxLCJpYXQiOjE2OTE5MzIyNjF9.-HNYWthki9H2636KUJoGfl3OjP4n_IovX-owJ70a40CEgdNbtCG_1LjzECpt2NduWr46yWVJpmXZWgUqVl80Jw');
-    httpReq.onreadystatechange = showTicket;
-    httpReq.send(JSON.stringify(ticketData));
-
+function findTable(url) {
+  httpReq = new XMLHttpRequest();
+  httpReq.open("POST", url, true);
+  httpReq.setRequestHeader("Content-Type", "application/json");
+  httpReq.setRequestHeader(
+    "Authorization",
+    "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1lc2hAZ21haWwuY29tIiwiZXhwIjoxNjkxOTM0MDYxLCJpYXQiOjE2OTE5MzIyNjF9.-HNYWthki9H2636KUJoGfl3OjP4n_IovX-owJ70a40CEgdNbtCG_1LjzECpt2NduWr46yWVJpmXZWgUqVl80Jw"
+  );
+  httpReq.onreadystatechange = showTicket;
+  httpReq.send(JSON.stringify(ticketData));
 }
 
-function showTicket(){
+function showTicket() {
+  if (httpReq.readyState === XMLHttpRequest.DONE && httpReq.status === 200) {
+    // move to ticket page and there only load the ticket
 
-    if(httpReq.readyState === XMLHttpRequest.DONE && httpReq.status === 200){
-
-        // move to ticket page and there only load the ticket
-
-        window.location.href = `ticket.html?userId=${user.id}`;
-
-    }
+    window.location.href = `ticket.html?userId=${user.id}`;
+  }
 }
-

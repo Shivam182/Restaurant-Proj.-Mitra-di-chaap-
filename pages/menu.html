@@ -7,21 +7,18 @@
     <title>Menu</title>
     <link rel="stylesheet" href="../styles/style1.css" />
     <link rel="stylesheet" href="../styles/menu.css" />
-   
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-     <script type="module" src="../js/pages/menu.js" defer></script>
-     <script src="../functionality/menu.js" defer type="module"></script>
+    <script type="module" src="../js/pages/menu.js" defer></script>
+    <script src="../functionality/menu.js" defer type="module"></script>
   </head>
   <body>
     <!-- navbar -->
     <nav class="navbar">
-      
-
       <div class="nav-center">
-
         <div class="logo-container">
           <img src="../images/hot.png" alt="logo" />
           <h4 class="name text-slanted">
@@ -44,19 +41,14 @@
             <i class="fa fa-search"></i>
           </button>
           <div class="search-box">
-            <input type="text" name="search" placeholder="Enter here">
+            <input type="text" name="search" placeholder="Enter here" />
             <button type="submit" class="search-query">Search</button>
           </div>
-          <button class="order-online-btn">
-            order online
-          </button>
-          <button class="reservation-btn">
-            dine-in
-          </button>
+          <button class="order-online-btn">order online</button>
+          <button class="reservation-btn">dine-in</button>
         </div>
       </div>
     </nav>
-
 
     <!-- main content -->
     <main class="main">
@@ -80,14 +72,15 @@
           <div class="filters">
             <div class="filter-items">
               <span class="filter" id="all-filter">All</span>
-              <span class="filter" id="recommended-filter">Recommended(15)</span>
+              <span class="filter" id="recommended-filter"
+                >Recommended</span
+              >
               <span class="filter" id="spicy-sabzi-filter">Spicy Sabzi</span>
               <span class="filter" id="chapati-filter">Chapati</span>
               <span class="filter" id="daal-filter">Daal</span>
-
             </div>
             <div class="slide-container">
-              <input 
+              <input
                 type="range"
                 min="10"
                 max="500"
@@ -99,9 +92,7 @@
           </div>
 
           <!-- items section -->
-          <div class="cards">
-           
-          </div>
+          <div class="cards"></div>
         </div>
       </div>
     </main>
@@ -130,7 +121,5 @@
         <span>All rights reserved &copy Mitra di chaap 2023</span>
       </div>
     </footer>
-
-    
   </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+   
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,10 +11,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
+   <script src="../functionality/cart.js" defer type="module"></script>
     <link rel="stylesheet" href="../styles/cart.css" />
-    <script type="module" src="../js/pages/cart.js" defer></script>
-    <script src="../functionality/cart.js" defer type="module"></script>
+    <script type="module" src="../js/pages/cart.js" defer ></script>
+ 
   </head>
   <body>
     <!-- navbar -->
@@ -49,9 +50,8 @@
     <!-- main components -->
     <main class="main">
       <div class="cart-header">
-        <span >
-          <i id="cart-icon"
-          class="fa fa-shopping-cart"></i>
+        <span>
+          <i id="cart-icon" class="fa fa-shopping-cart"></i>
         </span>
         <h1 class="title-cart">my Cart</h1>
       </div>
@@ -59,6 +59,7 @@
       <div class="cart-items">
         <div class="container">
           <!-- dynamically generated html here. -->
+          
         </div>
       </div>
 
@@ -72,7 +73,7 @@
             <button type="submit">apply</button>
           </div>
 
-          <h3 class="cart-total">Sub Total: $334/-</h3>
+          <h3 class="cart-total"></h3>
           <button class="checkout-btn">checkout</button>
         </div>
       </div>
