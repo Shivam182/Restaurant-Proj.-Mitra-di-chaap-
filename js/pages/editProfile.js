@@ -15,8 +15,7 @@ var updateUrl;
 
 const userData = {
   name: "",
-  email: "",
-  password: "",
+  email: ""
 };
 
 getUserDetails(url);
@@ -39,7 +38,6 @@ function setUserDetails() {
     userData.name = response.name;
     userData.email = response.email;
     userId = response.id;
-    userData.password = response.password;
 
     nameField.value = userData.name;
     emailField.value = userData.email;

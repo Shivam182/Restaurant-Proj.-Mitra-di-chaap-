@@ -67,6 +67,15 @@ header i{
   padding: 1rem;
 }
 
+.orders-table{
+  /* border: 2px solid; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 table{
   width: 100%;
   border-collapse: collapse;
@@ -77,3 +86,4 @@ th,td {
   border: 1px solid black;
   padding: 0.3rem;
 }
+
