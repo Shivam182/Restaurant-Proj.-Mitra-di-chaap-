@@ -82,5 +82,5 @@ function getUserDetails() {
 
 
 edit_btn.addEventListener("click", function () {
-  location.href = `edit.html?name=${user_name.innerHTML}&mail=${user_mail.innerHTML}`;
+  location.href = `edit.html`;
 });
