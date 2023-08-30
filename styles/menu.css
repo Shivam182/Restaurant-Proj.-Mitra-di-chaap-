@@ -203,3 +203,9 @@ body {
     margin-right: 20rem;
   }
 }
+
+
+.food-card:hover {
+  background-color: rgb(26, 102, 169);
+  transition: all 0.2s;
+}
