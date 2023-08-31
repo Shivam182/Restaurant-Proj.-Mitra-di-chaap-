@@ -1,4 +1,4 @@
-import { getElement } from "../../utils/util.js";
+import { getElement, getStorage } from "../../utils/util.js";
 import "../common/navbar.js";
 import "../common/topheader.js";
 
@@ -36,8 +36,8 @@ function fetchUser(url) {
   httpReq1.open("GET", url, true);
   httpReq1.setRequestHeader(
     "Authorization",
-    "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1lc2hAZ21haWwuY29tIiwiZXhwIjoxNjkxOTM0MDYxLCJpYXQiOjE2OTE5MzIyNjF9.-HNYWthki9H2636KUJoGfl3OjP4n_IovX-owJ70a40CEgdNbtCG_1LjzECpt2NduWr46yWVJpmXZWgUqVl80Jw"
-  );
+      getStorage('token')
+    );
   httpReq1.onreadystatechange = setUserDetails;
   httpReq1.send();
 }
@@ -77,9 +77,7 @@ function findTable(url) {
   httpReq.open("POST", url, true);
   httpReq.setRequestHeader("Content-Type", "application/json");
   httpReq.setRequestHeader(
-    "Authorization",
-    "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1lc2hAZ21haWwuY29tIiwiZXhwIjoxNjkxOTM0MDYxLCJpYXQiOjE2OTE5MzIyNjF9.-HNYWthki9H2636KUJoGfl3OjP4n_IovX-owJ70a40CEgdNbtCG_1LjzECpt2NduWr46yWVJpmXZWgUqVl80Jw"
-  );
+    "Authorization", getStorage('token')  );
   httpReq.onreadystatechange = showTicket;
   httpReq.send(JSON.stringify(ticketData));
 }

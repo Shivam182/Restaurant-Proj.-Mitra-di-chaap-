@@ -1,38 +1,42 @@
-import { getElement } from "../utils/util.js";
+import { getElement, getStorage } from "../utils/util.js";
 const ticket = getElement(".tickets");
 
 var httpReq;
 var usrId;
 
+/**
+ * GENERATE TICKETS DYNAMICALLLY 
+ */
+
+
 var urlprams = new URLSearchParams(document.location.search);
 
 usrId = urlprams.get("userId");
 
+const token = getStorage("token");
+
+if(token.length == 0) {
+  window.location.href = `login.html`;
+}
+
 var tktUrl = `http://localhost:9090/api/ticketing/tickets/user/${usrId}`;
 var httpReq;
-
-const tktData = {
-  name: "",
-  time: "",
-  tableSize: "",
-  id: "",
-};
 
 getTickets(tktUrl);
 
 function getTickets(url) {
   httpReq = new XMLHttpRequest();
   httpReq.open("GET", url, true);
-  httpReq.setRequestHeader(
-    "Authorization",
-    "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1lc2hAZ21haWwuY29tIiwiZXhwIjoxNjkyMDE3NjQ2LCJpYXQiOjE2OTIwMTU4NDZ9.PEVkXdMRzWjNjbCXeclDTzll257YXWvFZ_2Dh4lHnscy3fHo92O4a0QQF-lajwMJ6Zt_5Vv__mBqq8jr1S0ZDQ"
-  );
+  httpReq.setRequestHeader("Authorization", token);
+  httpReq.setRequestHeader('Content-Type', 'application/json');
   httpReq.onreadystatechange = setItems;
   httpReq.send();
 }
 
+
 function setItems() {
   if (httpReq.readyState === XMLHttpRequest.DONE && httpReq.status === 200) {
+
     const res = JSON.parse(httpReq.responseText);
 
     var str = res
