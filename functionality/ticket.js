@@ -38,7 +38,7 @@ function setItems() {
   if (httpReq.readyState === XMLHttpRequest.DONE && httpReq.status === 200) {
 
     const res = JSON.parse(httpReq.responseText);
-
+    console.log(JSON.stringify(res));
     var str = res
       .map((item) => {
         return `<div class="ticket">

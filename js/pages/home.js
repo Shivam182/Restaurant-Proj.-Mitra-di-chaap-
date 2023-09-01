@@ -12,8 +12,9 @@ const partysize = getElement("#party_size");
 const partytime = getElement("#party-time");
 
 var httpReq;
+var userMail = parseJwt(getStorage('token')).sub;
 var tktUrl = "http://localhost:9090/api/ticketing/create";
-var usrUrl = "http://localhost:9090/api/users/2";
+var usrUrl = `http://localhost:9090/api/users/email/${userMail}`;
 
 const ticketData = {
   name: "",
@@ -77,7 +78,7 @@ function findTable(url) {
   httpReq.open("POST", url, true);
   httpReq.setRequestHeader("Content-Type", "application/json");
   httpReq.setRequestHeader(
-    "Authorization", getStorage('token')  );
+    "Authorization", getStorage('token'));
   httpReq.onreadystatechange = showTicket;
   httpReq.send(JSON.stringify(ticketData));
 }
@@ -88,4 +89,21 @@ function showTicket() {
 
     window.location.href = `ticket.html?userId=${user.id}`;
   }
+}
+
+
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    window
+      .atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
+
+  return JSON.parse(jsonPayload);
 }
