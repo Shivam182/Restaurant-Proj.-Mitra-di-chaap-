@@ -5,6 +5,7 @@ const user_name = getElement("#name");
 const user_mail = getElement("#mail");
 const user_password = getElement("#password");
 const dashboard = getElement('#operator-access');
+const edit_password = getElement('#edit-password');
 
 
 const edit_btn = getElement("#edt-btn");
@@ -84,3 +85,9 @@ function getUserDetails() {
 edit_btn.addEventListener("click", function () {
   location.href = `edit.html`;
 });
+
+edit_password.addEventListener('click', () =>{
+
+
+  console.log('i have been clicked');
+})
