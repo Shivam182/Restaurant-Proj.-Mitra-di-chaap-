@@ -360,23 +360,28 @@ h4 {
   display: grid;
   place-content: center;
   width: 200px;
-  background-color: rgb(192, 151, 97);
+  background-color: rgba(21, 69, 34, 0.795);
   border-radius: 0.8rem;
   width: 330px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
+
 
 .card-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .item-title {
   letter-spacing: 0.01rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif */
   font-weight: 650;
   /* border: 2px solid; */
   text-align: center;
-  color: #1b285a;
+  color: #ffffff;
+  margin-bottom: 1rem;
 }
 
 .card-content img {
@@ -399,10 +404,12 @@ h4 {
 }
 
 .inner-container {
+
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  /* border: 2px solid; */
+  flex-direction: column;
+
+
+  border: 2px solid;
 }
 
 .add-order {
@@ -418,7 +425,7 @@ h4 {
   border: transparent;
   margin: auto;
   letter-spacing: 0.02rem;
-  margin-left: 4.5rem;
+  /* margin-left: 4.5rem; */
 }
 
 .add-order:hover {
@@ -429,9 +436,10 @@ h4 {
 .price {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 650;
-  color: #434859;
-  margin-top: auto;
+  color: #f6f7fa;
+  margin-top: 0.6rem;
   margin-bottom: auto;
+
 }
 
 .order {
@@ -770,7 +778,7 @@ h4 {
     display: grid;
     place-content: center;
     width: 120px;
-    background-color: rgb(192, 151, 97);
+    background-color: rgb(255, 255, 255);
     border-radius: 0.8rem;
     width: 230px;
   }
@@ -911,19 +919,19 @@ h4 {
 }
 
 .about p {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 600;
+  letter-spacing: 0.4rem;
   color: aliceblue;
   font-family: "Kaushan Script";  letter-spacing: 0.02rem;
-    line-height: 1.5rem;
+  line-height: 1.9rem;
 }
 
 .footer {
   margin-top: 1rem;
- 
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   padding-top: 1rem;
-  background-color: rgb(86, 76, 57);
-
+  background-color: rgb(71, 60, 41);
   width: 100%;
 }
 
@@ -960,3 +968,7 @@ h4 {
   overflow-y: auto;
   text-align: justify;
 }
+
+
+
+

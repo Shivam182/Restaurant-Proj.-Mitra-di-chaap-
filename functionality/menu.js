@@ -173,11 +173,8 @@ const filters = getElement(".filter-items");
                   <p class="mini-description">
                     ${item.description}
                   </p>
-                  <div class="inner-container">
-                   
                   <button class="add-order">Add</button>
                   <h3 class="price">$${item.price}</h3>
-                  </div>
                 
                 </div>
               </div>

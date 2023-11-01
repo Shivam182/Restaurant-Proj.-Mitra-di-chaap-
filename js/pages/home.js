@@ -11,10 +11,23 @@ const partydate = getElement("#party-date");
 const partysize = getElement("#party_size");
 const partytime = getElement("#party-time");
 
-var httpReq;
-var userMail = parseJwt(getStorage('token')).sub;
+
 var tktUrl = "http://localhost:9090/api/ticketing/create";
 var usrUrl = `http://localhost:9090/api/users/email/${userMail}`;
+
+var httpReq;
+
+var userToken = getStorage('token');
+
+var userMail;
+
+if(userToken && userToken.length != 0){
+
+   userMail = parseJwt(getStorage('token')).sub;
+   fetchUser(usrUrl);
+}
+
+
 
 const ticketData = {
   name: "",
@@ -29,7 +42,7 @@ const user = {
   id: "",
 };
 
-fetchUser(usrUrl);
+
 var httpReq1;
 
 function fetchUser(url) {
@@ -48,6 +61,8 @@ function setUserDetails() {
     const res = JSON.parse(httpReq1.responseText);
     user.name = res.name;
     user.id = res.id;
+  } else if(httpReq1.status === 401) {
+    localStorage.clear();
   }
 }
 

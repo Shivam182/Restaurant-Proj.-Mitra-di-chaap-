@@ -25,6 +25,7 @@ signup.addEventListener("click", function () {
   if (!signup_box.classList.contains("show")) {
     login_box.classList.remove("show");
     signup_box.classList.add("show");
+    // signup_box.style.display = "flex";
     login.style.backgroundColor = "white";
     login.style.color = "black";
   }

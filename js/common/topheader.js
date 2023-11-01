@@ -14,9 +14,14 @@ const login_signup_box = getElement(".login-signup");
 
 const userToken = getStorage('token');
 
-if (userToken) {
+
+
+if (userToken && userToken.length != 0) {
+  console.log(userToken)
   login_signup_box.style.display = "none";
 }
+
+
 
 top_title.addEventListener("click", function () {
   // navigate to another url and can return back.

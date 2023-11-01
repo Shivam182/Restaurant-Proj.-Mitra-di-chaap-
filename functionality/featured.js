@@ -1,4 +1,4 @@
-import { getElement } from "../utils/util.js";
+import { getElement, getStorage } from "../utils/util.js";
 const featured_section = getElement(".featured");
 
 var httpRequest;
@@ -8,6 +8,12 @@ var featured_items = {
 };
 
 var url = "http://localhost:9090/api/item/get/";
+var addToCartUrl = `http://localhost:9090/api/cart/add`;
+var userUrl = `http:localhost:9090/api/users/email/`;
+
+var userToken = getStorage('token');
+
+var userId;
 
 httpRequest = new XMLHttpRequest();
 makeRequest(0, featured_items.featured.length);
@@ -43,21 +49,114 @@ function setFootItems(featured_items) {
       const element = JSON.parse(item);
 
       return `
-    <div class="food-card">
+    <div class="food-card" id={${element.itemId}}>
       <div class="card-content">
       <h3 class="item-title">${element.title}</h3>
-        <img src="${element.image1}" alt="food image" />
-        <p class="mini-description">
+      <img src="${element.image1}" alt="food image" />
+      <p class="mini-description">
         ${element.description}
-        </p>
-        <div class="inner-container">
-        <button class="add-order">order</button>
-        <h3 class="price">$${element.price}</h3>
-        </div>
+      </p>
+      <button class="add-order">order</button>
+      <h3 class="price">$${element.price}</h3>
+       
       </div>
     </div>`;
     })
     .join("");
 
   featured_section.innerHTML = str;
+  activateBtns();
+}
+
+var getUserReq;
+
+function getuser() {
+
+  getUserReq = new XMLHttpRequest();
+
+  getUserReq.open('GET', userUrl);
+
+  getUserReq.setRequestHeader('Authorization', userToken);
+
+  getUserReq.onreadystatechange =  () => {
+
+    if(getUserReq.readyState == XMLHttpRequest.DONE && getUserReq.status === 201) {
+      var res = JSON.parse(getUserReq.responseText);
+
+      console.log(JSON.stringify(res));
+
+      userId = res.id;
+    }
+
+  }
+
+  getUserReq.send();
+
+}
+
+
+function activateBtns() {
+  const order_btns = document.getElementsByClassName('add-order');
+
+  for(var i = 0; i < order_btns.length; i++) {
+
+    order_btns[i].addEventListener('click', (e)=>{
+        
+      console.log(e.target.parentNode.parentNode.id);
+
+      
+
+      if(!userToken && userToken.length == 0) {
+        location.assign('login.html');
+        return;
+      }
+
+      var foodItemId  = e.target.parentNode.parentNode.id;
+      userUrl = userUrl + parseJwt(userToken).sub;
+      getuser();
+
+      addToCartUrl = addToCartUrl + `/${userId}/${foodItemId}/1`;
+      addItemToCartRequest(addToCartUrl);
+
+    })
+  }
+
+  
+}
+
+
+var cartAddReq;
+
+function addItemToCartRequest(cartUrl) {
+
+  cartAddReq = new XMLHttpRequest();
+
+  cartAddReq.open('PUT', cartUrl);
+  cartAddReq.setRequestHeader('Authorization',userToken);
+  cartAddReq.onreadystatechange = () => {
+
+    if(cartAddReq.readyState == XMLHttpRequest.DONE && cartAddReq.status === 201) {
+      location.assign(`cart.html`);
+    }
+
+  }
+
+  cartAddReq.send();
+}
+
+
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    window
+      .atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
+
+  return JSON.parse(jsonPayload);
 }
