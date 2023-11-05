@@ -43,11 +43,11 @@
 }
 
 .info {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 1.2rem;
 }
@@ -86,7 +86,11 @@
   text-transform: lowercase;
 }
 
-#edt-btn {
+#logout-btn {
+  margin-top: 1.2rem;
+}
+
+#edt-btn, #logout-btn {
   border: transparent;
   padding: 0.5rem;
   border-radius: 0.35rem;
@@ -96,11 +100,11 @@
   font-weight: bold;
 }
 
-#cart a, #edt-btn, #dashboard a, #send_feedback a {
+#cart a, #edt-btn, #dashboard a, #send_feedback a, #logout-btn {
   color: aliceblue;
 }
 
-#cart, #dashboard, #send_feedback {
+#cart, #dashboard, #send_feedback, #logout-btn {
   padding: 0.5rem;
   border-radius: 0.35rem;
   background-color: rgb(20, 20, 45);  
@@ -111,7 +115,8 @@
 #contact_us:hover,
 #send_feedback:hover,
 #edt-btn:hover,
-#dashboard:hover {
+#dashboard:hover,
+#logout-btn:hover {
   cursor: pointer;
   background-color: rgb(72, 75, 39);
 }

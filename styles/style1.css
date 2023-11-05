@@ -282,6 +282,14 @@ h4 {
   display: block;
 }
 
+#featured-head {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration:underline;
+  color: rgb(44, 29, 66);
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .navbar-links {
   font-size: 1.8rem;
   margin-left: 1rem;
@@ -468,7 +476,8 @@ h4 {
 
 .online-order h3 {
   font-size: 1.5rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: underline;
   font-weight: 650;
   letter-spacing: 0.02rem;
   padding: 0.6rem;
@@ -521,7 +530,8 @@ h4 {
 .reservation h1 {
   font-size: 1.3rem;
   letter-spacing: 0.01rem;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: underline;
   margin-bottom: 1rem;
 }
 
@@ -855,6 +865,8 @@ h4 {
     padding: 0.5rem;
     letter-spacing: normal;
   }
+
+ 
 
   .featured {
     padding: 1rem;

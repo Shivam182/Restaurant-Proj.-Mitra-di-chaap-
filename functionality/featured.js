@@ -64,7 +64,9 @@ function setFootItems(featured_items) {
     })
     .join("");
 
-  featured_section.innerHTML = str;
+
+
+  featured_section.innerHTML = `` + str;
   activateBtns();
 }
 
@@ -83,7 +85,7 @@ function getuser() {
     if(getUserReq.readyState == XMLHttpRequest.DONE && getUserReq.status === 201) {
       var res = JSON.parse(getUserReq.responseText);
 
-      console.log(JSON.stringify(res));
+      // console.log(JSON.stringify(res));
 
       userId = res.id;
     }
@@ -102,16 +104,17 @@ function activateBtns() {
 
     order_btns[i].addEventListener('click', (e)=>{
         
-      console.log(e.target.parentNode.parentNode.id);
+      // console.log(e.target.parentNode.parentNode.id);
 
       
 
-      if(!userToken && userToken.length == 0) {
+      if(!userToken || userToken.length == 0) {
         location.assign('login.html');
         return;
       }
 
       var foodItemId  = e.target.parentNode.parentNode.id;
+      // console.log(userToken);
       userUrl = userUrl + parseJwt(userToken).sub;
       getuser();
 

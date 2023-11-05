@@ -6,6 +6,7 @@ const user_mail = getElement("#mail");
 const user_password = getElement("#password");
 const dashboard = getElement('#operator-access');
 const edit_password = getElement('#edit-password');
+const logout = getElement('#logout-btn');
 
 
 const edit_btn = getElement("#edt-btn");
@@ -89,5 +90,11 @@ edit_btn.addEventListener("click", function () {
 edit_password.addEventListener('click', () =>{
 
 
-  console.log('i have been clicked');
+  // console.log('i have been clicked');
+});
+
+
+logout.addEventListener('click', function () {
+  localStorage.clear();
+  location.href = `index.html`;
 })

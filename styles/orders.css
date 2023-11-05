@@ -24,11 +24,12 @@ header i{
 
 .orders-container{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     padding: 2rem;
     min-height: 600px;
     flex-direction: column;
+    /* border: 2px solid; */
 }
 
 #no-order{
@@ -56,15 +57,38 @@ header i{
 /*This is for the operator dashboard*/
 .headin{
   text-align: center;
-  font-size: 1.9rem;
+  font-size: 2rem;
   text-decoration: underline;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  color: rgb(30, 30, 58);
+  margin-bottom: 2rem;
 }
 
 .search{
   display: flex;
-  flex-direction: row;
-  justify-content: end;
+  flex-direction: column;
+  align-items: end;
   padding: 1rem;
+}
+
+.search input {
+  /* background-color: rgb(208, 223, 233); */
+  border: 0.5px solid grey;
+  /* font-size: 1rem; */
+  /* border-radius: 1rem; */
+  margin-bottom: 1.5rem;
+  padding: 0.45rem;
+}
+
+.search button {
+  border: transparent;
+  border-radius: 0.4rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: rgb(220, 163, 19);
+  padding: 0.6rem;
+  color: white;
+
 }
 
 .orders-table{
@@ -79,11 +103,18 @@ header i{
 table{
   width: 100%;
   border-collapse: collapse;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
 }
+
 
 th,td {
   text-align: left;
   border: 1px solid black;
-  padding: 0.3rem;
+  padding: 0.9rem;
 }
 
+th {
+  background-color: antiquewhite;
+  padding: 1rem;
+}

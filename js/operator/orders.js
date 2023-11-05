@@ -1,4 +1,4 @@
-import { getElement } from "../../utils/util.js";
+import { getElement, getStorage } from "../../utils/util.js";
 const orderDiv = getElement(".order-table");
 
 const searchId = getElement("#find-id");
@@ -8,6 +8,12 @@ const searchStatusBtn = getElement(".find-status");
 
 var httpRequest;
 const url = "http://localhost:9090/api/order/all";
+
+var token = getStorage('token');
+
+if(token.length == 0) {
+  location.href = `login.html`;
+}
 
 var idFilterUrl;
 var statusFilterUrl;
@@ -46,8 +52,7 @@ function makeRequest(url) {
   httpRequest.open("GET", url, true);
   httpRequest.setRequestHeader(
     "Authorization",
-    "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJleHAiOjE2ODE0ODcwNzgsImlhdCI6MTY4MTQ4NTI3OH0.HGOrlT-3XwbJSKVCbbCHivPedu3OF7-A8pDM-2ewGjQhkZ6t8tVmfdLwWlmM6dJCn0CmK_UomYUw82W4TUCLKw"
-  );
+token);
   httpRequest.onreadystatechange = setItems;
   httpRequest.send();
 }
@@ -58,7 +63,7 @@ function setItems() {
     httpRequest.status === 200
   ) {
     const response = JSON.parse(httpRequest.responseText);
-
+    console.log(JSON.stringify(response))
     var str;
 
     if (response.length >= 0) {
