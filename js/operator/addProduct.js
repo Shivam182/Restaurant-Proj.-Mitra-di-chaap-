@@ -1,7 +1,15 @@
-import { getElement } from "../../utils/util.js";
+import { getElement, getStorage } from "../../utils/util.js";
 const file_input = getElement("#image");
 const show_img = getElement(".chosen-images");
 const submit = getElement(".submit");
+
+
+/**
+ * !!!!! CAUTION: The image upload service is only working with postman. 
+ */
+
+
+var userToken = getStorage('token');
 
 const images = [];
 var catId = 3;
@@ -68,13 +76,13 @@ submit.addEventListener("click", function (e) {
 
     makeRequest(url, itemData);
 
-    // This is not working upload images from postman using item id.
+    
     var formData = new FormData();
     formData.append("image", images);
 
-    imgUrl = `http://localhost:9090/api/item/image/upload/11`;
+    imgUrl = `http://localhost:9090/api/item/image/upload/17`;
 
-    uploadImage(imgUrl, formData);
+    // uploadImage(imgUrl, formData);
   }
 });
 
@@ -83,8 +91,7 @@ function makeRequest(url, itemData) {
   httpRequest.open("POST", url, true);
   httpRequest.setRequestHeader(
     "Authorization",
-    "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1lc2hAZ21haWwuY29tIiwiZXhwIjoxNjkxNTAyMzA0LCJpYXQiOjE2OTE1MDA1MDR9.NBmrhCSgBxwnDi9VsyqVJI01LSBOWVzXNgtJ2tdbEa48a0lkAKth73xvLPK4qpnNEB7V4EZ1KcF8zMTw3BuotA"
-  );
+userToken  );
   httpRequest.setRequestHeader("Content-Type", "application/json");
   httpRequest.onreadystatechange = afterSubmit;
   httpRequest.send(JSON.stringify(itemData));
@@ -94,14 +101,13 @@ function afterSubmit() {}
 
 function uploadImage(url, data) {
   httpRequest1 = new XMLHttpRequest();
-  httpRequest1.open("POST", url, true);
+  httpRequest1.open("PUT", url);
   httpRequest1.setRequestHeader(
     "Content-Type",
     "multipart/form-data; boundary=WebAppBoundary"
   );
   httpRequest1.setRequestHeader(
     "Authorization",
-    "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1lc2hAZ21haWwuY29tIiwiZXhwIjoxNjkxNTAyMzA0LCJpYXQiOjE2OTE1MDA1MDR9.NBmrhCSgBxwnDi9VsyqVJI01LSBOWVzXNgtJ2tdbEa48a0lkAKth73xvLPK4qpnNEB7V4EZ1KcF8zMTw3BuotA"
-  );
+userToken  );
   httpRequest1.send(data);
 }
