@@ -8,8 +8,10 @@ var featured_items = {
 };
 
 var url = "http://localhost:9090/api/item/get/";
-var addToCartUrl = `http://localhost:9090/api/cart/add`;
-var userUrl = `http:localhost:9090/api/users/email/`;
+var addToCartUrl ;
+var userUrl;
+
+var foodItemId;
 
 var userToken = getStorage('token');
 
@@ -72,22 +74,29 @@ function setFootItems(featured_items) {
 
 var getUserReq;
 
-function getuser() {
+function getuser(url) {
 
   getUserReq = new XMLHttpRequest();
 
-  getUserReq.open('GET', userUrl);
+  getUserReq.open('GET', url);
 
   getUserReq.setRequestHeader('Authorization', userToken);
 
   getUserReq.onreadystatechange =  () => {
 
-    if(getUserReq.readyState == XMLHttpRequest.DONE && getUserReq.status === 201) {
+    if(getUserReq.readyState == XMLHttpRequest.DONE && getUserReq.status === 200) {
       var res = JSON.parse(getUserReq.responseText);
 
       // console.log(JSON.stringify(res));
 
+
       userId = res.id;
+
+      addToCartUrl = `http://localhost:9090/api/cart/add` + `/${userId}/${foodItemId}/1`;
+      addItemToCartRequest(addToCartUrl);
+
+    }else{
+      // console.log(getUserReq.status)
     }
 
   }
@@ -113,14 +122,13 @@ function activateBtns() {
         return;
       }
 
-      var foodItemId  = e.target.parentNode.parentNode.id;
-      // console.log(userToken);
-      userUrl = userUrl + parseJwt(userToken).sub;
-      getuser();
+       foodItemId  = e.target.parentNode.parentNode.id[1];
+      // console.log(foodItemId);
+      userUrl = `http://localhost:9090/api/users/email/`+ parseJwt(userToken).sub;
 
-      addToCartUrl = addToCartUrl + `/${userId}/${foodItemId}/1`;
-      addItemToCartRequest(addToCartUrl);
+      getuser(userUrl);
 
+      
     })
   }
 
@@ -138,8 +146,10 @@ function addItemToCartRequest(cartUrl) {
   cartAddReq.setRequestHeader('Authorization',userToken);
   cartAddReq.onreadystatechange = () => {
 
-    if(cartAddReq.readyState == XMLHttpRequest.DONE && cartAddReq.status === 201) {
+    if(cartAddReq.readyState == XMLHttpRequest.DONE && cartAddReq.status === 200) {
       location.assign(`cart.html`);
+    }else {
+      // console.log(cartAddReq)
     }
 
   }
