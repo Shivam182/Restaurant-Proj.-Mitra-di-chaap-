@@ -4,6 +4,7 @@ const show_img = getElement(".chosen-images");
 const submit = getElement(".submit");
 
 
+
 /**
  * !!!!! CAUTION: The image upload service is only working with postman. 
  */
@@ -12,8 +13,7 @@ const submit = getElement(".submit");
 var userToken = getStorage('token');
 
 const images = [];
-var catId = 3;
-const url = `http://localhost:9090/api/item/category/${catId}`;
+var url; 
 var imgUrl;
 var httpRequest1;
 var httpRequest;
@@ -23,6 +23,7 @@ const itemData = {
   price: "",
   description: "",
   stock: "",
+  catID:"",
 };
 
 const imgData = {
@@ -59,13 +60,15 @@ submit.addEventListener("click", function (e) {
   // var imgs = images;
   var description = getElement("#desc");
   var stk = getElement("#stock");
+  var category = getElement('#cat');
 
   if (
     title.value == "" ||
     price.value == "" ||
     images.length == 0 ||
     description.value == "" ||
-    stk.value == ""
+    stk.value == "" || 
+    category.value == 0
   ) {
     alert("Make sure all fields are filled");
   } else {
@@ -73,6 +76,8 @@ submit.addEventListener("click", function (e) {
     itemData.price = price.value;
     itemData.description = description.value;
     itemData.stock = stk.value;
+
+    url = `http://localhost:9090/api/item/category/${category.value}`;
 
     makeRequest(url, itemData);
 
