@@ -89,6 +89,7 @@ edit_btn.addEventListener("click", function () {
 
 edit_password.addEventListener('click', () =>{
 
+  location.href = `EditPassword.html`;
 
   // console.log('i have been clicked');
 });
