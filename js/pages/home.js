@@ -13,7 +13,7 @@ const partytime = getElement("#party-time");
 
 
 var tktUrl = "http://localhost:9090/api/ticketing/create";
-var usrUrl = `http://localhost:9090/api/users/email/${userMail}`;
+var usrUrl;
 
 var httpReq;
 
@@ -21,9 +21,10 @@ var userToken = getStorage('token');
 
 var userMail;
 
-if(userToken && userToken.length != 0){
+if( userToken.length != 0){
 
    userMail = parseJwt(getStorage('token')).sub;
+   usrUrl = `http://localhost:9090/api/users/email/${userMail}`
    fetchUser(usrUrl);
 }
 
@@ -59,6 +60,7 @@ function fetchUser(url) {
 function setUserDetails() {
   if (httpReq1.readyState === XMLHttpRequest.DONE && httpReq1.status === 200) {
     const res = JSON.parse(httpReq1.responseText);
+    // console.log(JSON.stringify(res))
     user.name = res.name;
     user.id = res.id;
   } else if(httpReq1.status === 401) {
@@ -101,7 +103,7 @@ function findTable(url) {
 function showTicket() {
   if (httpReq.readyState === XMLHttpRequest.DONE && httpReq.status === 200) {
     // move to ticket page and there only load the ticket
-
+    // console.log(httpReq)
     window.location.href = `ticket.html?userId=${user.id}`;
   }
 }
