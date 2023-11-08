@@ -1,4 +1,4 @@
-import { getElement } from "../../utils/util.js";
+import { getElement, getStorage } from "../../utils/util.js";
 
 const logo_container = getElement(".logo-container");
 const search_btn = getElement(".search-btn");
@@ -9,6 +9,9 @@ const search_query = getElement(".search-query");
 
 const close_search_btn = getElement(".fa-close");
 const result_area = getElement(".result-area");
+
+
+var token = getStorage('token');
 
 var httpRequest;
 
@@ -58,8 +61,7 @@ try {
 
     httpRequest.setRequestHeader(
       "Authorization",
-      "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJleHAiOjE2ODE0ODcwNzgsImlhdCI6MTY4MTQ4NTI3OH0.HGOrlT-3XwbJSKVCbbCHivPedu3OF7-A8pDM-2ewGjQhkZ6t8tVmfdLwWlmM6dJCn0CmK_UomYUw82W4TUCLKw"
-    );
+token    );
     httpRequest.onreadystatechange = setItems;
     httpRequest.send();
   }

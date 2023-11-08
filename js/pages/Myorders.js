@@ -34,7 +34,7 @@ function setOrders() {
   ) {
     const response = JSON.parse(httpRequest.responseText);
 
-    // console.log(JSON.stringify(response));
+    console.log(JSON.stringify(response));
 
     var str = response
       .map((item) => {
@@ -64,6 +64,8 @@ function setOrders() {
 
     </table>
     `;
+  }else if(httpRequest.status == 401) {
+    location.href =`login.html`;
   }
 }
 
