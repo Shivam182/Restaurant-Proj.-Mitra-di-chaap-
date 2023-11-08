@@ -8,9 +8,6 @@ const url = "http://localhost:9090/api/feedback/all";
 
 const token = getStorage('token');
 
-if(token.length == 0) {
-  location.href = `login.html`;
-}
 
 var searchUrl;
 

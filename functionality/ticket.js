@@ -81,7 +81,8 @@ function getuser() {
       tktUrl = tktUrl + usrId;
 
       getTickets(tktUrl);
-    }else {
+    }else if(getUserReq.status == 401) {
+      location.href = `login.html`;
       // console.log(getUserReq.status)
     }
 

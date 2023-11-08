@@ -95,7 +95,8 @@ function getuser(url) {
       addToCartUrl = `http://localhost:9090/api/cart/add` + `/${userId}/${foodItemId}/1`;
       addItemToCartRequest(addToCartUrl);
 
-    }else{
+    }else if(getUserReq.status == 401) {
+      location.href = `login.html`;
       // console.log(getUserReq.status)
     }
 

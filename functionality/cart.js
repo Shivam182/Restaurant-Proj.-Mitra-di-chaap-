@@ -14,9 +14,7 @@ var foodItems = [];
 
 const usrToken = getStorage("token");
 
-if (usrToken.length == 0) {
-  window.location.href = `login.html`;
-}
+
 
 const email = parseJwt(usrToken).sub;
 
@@ -38,6 +36,9 @@ function setUID() {
     const res = JSON.parse(httpReq1.responseText);
     userId = res.id;
     makeRequest(url + userId);
+  }else if(httpReq1.status == 401) {
+    location.href = `login.html`;
+    // console.log(getUserReq.status)
   }
 }
 
