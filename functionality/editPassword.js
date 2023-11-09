@@ -95,7 +95,9 @@ function afterVerify() {
         k();
 
    
-  } 
+  }else {
+    alert('Bad Credentials');
+  }
 
 
 }

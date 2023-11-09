@@ -26,6 +26,7 @@ if( userToken.length != 0){
    userMail = parseJwt(getStorage('token')).sub;
    usrUrl = `http://localhost:9090/api/users/email/${userMail}`
    fetchUser(usrUrl);
+
 }
 
 
@@ -65,6 +66,7 @@ function setUserDetails() {
     user.id = res.id;
   } else if(httpReq1.status === 401) {
     localStorage.clear();
+    
   }
 }
 
