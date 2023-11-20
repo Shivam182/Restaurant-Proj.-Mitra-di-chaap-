@@ -87,16 +87,19 @@ body {
   padding: 0.5rem;
   border-radius: 0.5rem;
   width: 11rem;
-  /* border: 2px solid; */
 }
 
 .filter-items {
   display: flex;
   flex-direction: column;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 500;
   letter-spacing: 0.07rem;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+}
+
+.filter-items span {
+  margin-bottom: 0.3rem;
 }
 
 .filter-items span:hover {
@@ -115,6 +118,11 @@ body {
   font-weight: 600;
   text-align: center;
   margin-top: -25;
+}
+
+#slide-val {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
 }
 
 #price-slider:hover {

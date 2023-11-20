@@ -417,23 +417,25 @@ h4 {
   flex-direction: column;
 
 
-  border: 2px solid;
+  /* border: 2px solid; */
+  justify-content: center;
+  align-items: center;
 }
 
 .add-order {
-  background: rgb(102, 128, 61);
+  background-color: rgb(102, 128, 61);
   border-radius: 0.5rem;
-  height: 2.5rem;
   font-size: 1.2rem;
   text-transform: capitalize;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 600;
   color: rgb(238, 241, 241);
-  width: 50%;
+  text-align: center;
   border: transparent;
   margin: auto;
   letter-spacing: 0.02rem;
   /* margin-left: 4.5rem; */
+  padding: 0.9rem;
 }
 
 .add-order:hover {

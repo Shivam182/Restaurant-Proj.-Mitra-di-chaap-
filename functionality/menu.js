@@ -2,7 +2,7 @@ import { getElement, getStorage } from "../utils/util.js";
 const cards_div = getElement(".cards");
 const priceSelector = getElement("#price-slider");
 const food_cards = document.getElementsByClassName('food-card');
-
+const price_val = document.getElementById('slide-val');
 
 /**
  * 1. Make all requests very arranged & minimal.
@@ -44,7 +44,8 @@ var token = getStorage('token');
   priceSelector.addEventListener("change", (e) => {
     selectPrice = e.target.value;
     priceURL = `http://localhost:9090/api/item/price/10/${selectPrice}`;
-  
+    
+    price_val.innerHTML = `Max-Price: ₹`+selectPrice +`/-`;
     getItemsByPrice(priceURL);
     cards_div.innerHTML = '';
   });
@@ -59,6 +60,8 @@ var token = getStorage('token');
   function setItemsByPrice() {
     if (httpRe3.readyState === XMLHttpRequest.DONE && httpRe3.status === 200) {
       var res = JSON.parse(httpRe3.responseText);
+
+      console.log(JSON.stringify(res));
   
       var str = res
         .map((item) => {
@@ -239,15 +242,16 @@ function k(){
 
   for(let i  = 0; i < food_cards.length; i++){
       
-      food_cards[i].addEventListener('click', (e)=>{
+      // click on item image to go to the item description 
+      food_cards[i].childNodes[1].childNodes[3].addEventListener('click', (e)=>{
 
-          // console.log(food_cards[i].childNodes[1].parentNode.id);
+          // console.log(food_cards[i].childNodes[1].childNodes[3]);
 
           const item_id = food_cards[i].childNodes[1].parentNode.id;
 
           
 
-          // window.location.href = `item.html?id=${item_id}`;
+          window.location.href = `item.html?id=${item_id}`;
 
       });
 

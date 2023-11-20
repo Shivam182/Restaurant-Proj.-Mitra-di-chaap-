@@ -3,7 +3,7 @@ const featured_section = getElement(".featured");
 
 var httpRequest;
 var featured_items = {
-  featured: ["9", "3", "7"],
+  featured: ["9", "12", "7"],
   items: [],
 };
 

@@ -5,15 +5,32 @@ const saveReviewBtn = document.querySelector('#review-submit');
 const reviewWrite = document.querySelector('#write-review');
 
 
+/**
+ * PENDING :
+ * 
+ * 1. Implement Review Submission by user.
+ * 2. Implement Add To Cart Button Functionality.
+ * 
+ */
+
+
 const url = new URLSearchParams(document.location.search);
 const token = getStorage('token');
+
+var userId;
+var addToCartUrl;
+var foodItemId = url.get('id');
+
+if(!token || token.length == 0) {
+    location.href =  `login.html`;
+}
 
 var userMail = parseJwt(token).sub;
 var getItemRequest;
 var updateReviewsRequest;
 
 
-
+var userUrl = `http://localhost:9090/api/users/email/${userMail}`;
 var getItemUrl = `http://localhost:9090/api/item/get/${url.get('id')}`;
 
 const imagesArray = []
@@ -45,12 +62,17 @@ function setItemsData() {
 
             var str = `
             <div class="item-box">
-            <div class="item-name">${response.title}</div>
+                <div class="item-name">${response.title}</div>
             <div class="image-carousel">
               <button id="prev"><</button>
               <img src="${imagesArray[0]}" alt="food image" class="image" />
               <button id="next">></button>
             </div>
+          </div> 
+          
+          <div class="price-cart">
+            <h2 class="price">$${response.price}</h2>
+            <button class="cart">Add To Cart</button>
           </div>
     
           <div class="description-box">
@@ -58,11 +80,7 @@ function setItemsData() {
              ${response.description}
             </p>
           </div>
-    
-          <div class="price-cart">
-            <h2 class="price">$${response.price}</h2>
-            <button class="cart">Add To Cart</button>
-          </div>
+         
     
           
             `;
@@ -80,9 +98,10 @@ function setItemsData() {
             }).join('')
 
 
-            container.innerHTML = str + ` <div class="reviews">
+            container.innerHTML = str + `<div class="reviews">
             <h2 class="headin">Reviews</h2>
-                ${reviews}
+                <div class="rev-container"> ${reviews}</div>
+               
             </div>`;
 
        
@@ -102,6 +121,9 @@ function btns() {
     const prev_btn = document.querySelector('#prev');
     const next_btn  = document.querySelector('#next');
     const imageBox = document.querySelector('.image');
+
+    const submit_review_btn = document.querySelector('#review-submit');
+    const cart_add_btn = document.querySelector('.cart');
     
     var index  = 1;
 
@@ -121,6 +143,18 @@ function btns() {
             }
 
             imageBox.setAttribute('src',imagesArray[index++]);
+    });
+
+    cart_add_btn.addEventListener('click', (e)=>{
+
+        
+        getuser(userUrl);
+
+    });
+
+    submit_review_btn.addEventListener('click', (e)=>{
+
+
     })
     
 
@@ -129,7 +163,7 @@ function btns() {
 saveReviewBtn.addEventListener('click',(e)=>{
     e.preventDefault();
     
-    var reviewurl = `http://localhost:9090/api/reviews/user/${userMail}/item/${url.get('id')}`;
+    var reviewurl = `http://localhost:9090/api/reviews/user/${userMail}/item/${foodItemId}`;
 
 
     const reviewData = {
@@ -178,6 +212,64 @@ function reloadPage (){
     }
 
 }
+
+
+
+var getUserReq;
+
+function getuser(url) {
+
+  getUserReq = new XMLHttpRequest();
+
+  getUserReq.open('GET', url);
+
+  getUserReq.setRequestHeader('Authorization', token);
+
+  getUserReq.onreadystatechange =  () => {
+
+    if(getUserReq.readyState == XMLHttpRequest.DONE && getUserReq.status === 200) {
+      var res = JSON.parse(getUserReq.responseText);
+
+      // console.log(JSON.stringify(res));
+
+
+      userId = res.id;
+
+      addToCartUrl = `http://localhost:9090/api/cart/add` + `/${userId}/${foodItemId}/1`;
+      addItemToCartRequest(addToCartUrl);
+
+    }else if(getUserReq.status == 401) {
+      location.href = `login.html`;
+      // console.log(getUserReq.status)
+    }
+
+  }
+
+  getUserReq.send();
+
+}
+
+var cartAddReq;
+
+function addItemToCartRequest(cartUrl) {
+
+  cartAddReq = new XMLHttpRequest();
+
+  cartAddReq.open('PUT', cartUrl);
+  cartAddReq.setRequestHeader('Authorization',token);
+  cartAddReq.onreadystatechange = () => {
+
+    if(cartAddReq.readyState == XMLHttpRequest.DONE && cartAddReq.status === 200) {
+      location.assign(`cart.html`);
+    }else {
+      // console.log(cartAddReq)
+    }
+
+  }
+
+  cartAddReq.send();
+}
+
 
 
 function parseJwt(token) {
