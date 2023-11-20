@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+  color: goldenrod;
+}
+
+button {
+    font-size: 1.2rem;
+    border: transparent;
+    border-radius: 0.6rem;
+    background-color: brown;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 1.2rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(65, 47, 22);
+}

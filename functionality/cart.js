@@ -14,7 +14,9 @@ var foodItems = [];
 
 const usrToken = getStorage("token");
 
-
+if(!usrToken || usrToken.length == 0) {
+  location.href = `login.html`;
+}
 
 const email = parseJwt(usrToken).sub;
 
@@ -163,9 +165,16 @@ function setItems() {
     const subtractItem = document.getElementsByClassName("fa-minus-square");
     const curr_cnt = document.getElementsByClassName('curr-value');
 
+  //  console.log(cart_btn)
+
     try {
 
-      
+       cart_btn[0].addEventListener('click', (e)=>{
+      console.log('clicked')
+      location.href = `checkout.html`
+    })
+
+    // console.log(cart_btn[0])
 
 
       for (let i = 0; i < del.length; i++) {
@@ -241,6 +250,9 @@ function setItems() {
 
 
       }
+    
+    
+    
     } catch (error) {}
   });
 }
