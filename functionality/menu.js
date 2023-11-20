@@ -35,6 +35,14 @@ var addToCartUrl;
 var userId;
 var foodItemId;
 
+
+/**
+ * BUG : Here issue is that we need to click a filter twice to make it work
+ * Solution :->  get array of childNodes of filter-items class , then on each of them apply a click listener 
+ * where u get the respective innerHTML and find its cat .
+ */
+
+
 const filters = getElement(".filter-items");
 
 var token = getStorage('token');
